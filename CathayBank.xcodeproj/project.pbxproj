@@ -25,6 +25,7 @@
 		89A632112A86394500652A64 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6320D2A86394500652A64 /* BannerModel.swift */; };
 		89A632132A863AC700652A64 /* ImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A632122A863AC700652A64 /* ImageView+Extension.swift */; };
 		89A632162A871E0F00652A64 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A632152A871E0F00652A64 /* UIView+Extension.swift */; };
+		89A632192A87450800652A64 /* StoryboardSupports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A632182A87450800652A64 /* StoryboardSupports.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		89A6320D2A86394500652A64 /* BannerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
 		89A632122A863AC700652A64 /* ImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extension.swift"; sourceTree = "<group>"; };
 		89A632152A871E0F00652A64 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		89A632182A87450800652A64 /* StoryboardSupports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSupports.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				89A632152A871E0F00652A64 /* UIView+Extension.swift */,
+				89A632182A87450800652A64 /* StoryboardSupports.swift */,
 				89A632122A863AC700652A64 /* ImageView+Extension.swift */,
 			);
 			path = Extension;
@@ -312,6 +315,7 @@
 				89A632082A86368600652A64 /* AdTableViewCell.swift in Sources */,
 				89A6320E2A86394500652A64 /* AmountModel.swift in Sources */,
 				89A632132A863AC700652A64 /* ImageView+Extension.swift in Sources */,
+				89A632192A87450800652A64 /* StoryboardSupports.swift in Sources */,
 				89A6320F2A86394500652A64 /* NotificationModel.swift in Sources */,
 				89A632042A86322F00652A64 /* UIColorSets.swift in Sources */,
 				89A631D82A862DEE00652A64 /* ViewController.swift in Sources */,
