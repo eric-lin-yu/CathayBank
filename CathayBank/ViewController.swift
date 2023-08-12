@@ -7,6 +7,17 @@
 
 import UIKit
 
+enum CathayHomeTab: Int, CaseIterable {
+    case cashbalance = 0
+    case bottonView
+    case myFavorite
+    case ad
+    
+    static var count: Int {
+        return self.allCases.count
+    }
+}
+
 class ViewController: UIViewController {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -64,7 +75,7 @@ class ViewController: UIViewController {
     private let userImageViewSize: CGFloat = 40
     private let btnSize: CGFloat = 24
     
-    //MARK: - setup
+    //MARK: - setup UI
     private func setupViews() {
         let viewsToAdd: [UIView] = [
             userImageView,
@@ -132,6 +143,16 @@ class ViewController: UIViewController {
         ])
     }
     
+    private func setUpTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        let useCells = [CashbalanceTableViewCell.self]
+        useCells.forEach {
+            tableView.register($0.self, forCellReuseIdentifier: $0.storyboardIdentifier)
+        }
+    }
+    
     /// Create a custom tab bar item view.
     /// - Parameters:
     ///   - image: The name of the image for the icon.
@@ -191,20 +212,40 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setUpTableView()
         setupConstraint()
     }
 
 }
 
 //MARK: - TableView
-//extension ViewController: UITableViewDataSource, UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//
-//}
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return CathayHomeTab.count
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let tab = CathayHomeTab(rawValue: indexPath.row) else {
+            return UITableViewCell()
+        }
+
+        switch tab {
+        case .cashbalance:
+            return cashbalanceCell(on: tableView, at: indexPath)
+        default:
+            break
+        }
+
+        return UITableViewCell()
+    }
+
+    private func cashbalanceCell(on tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CashbalanceTableViewCell.self), for: indexPath) as! CashbalanceTableViewCell
+        
+        cell.configure()
+        
+        return cell
+    }
+}
 

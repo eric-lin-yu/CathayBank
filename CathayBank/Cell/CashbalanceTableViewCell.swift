@@ -86,7 +86,28 @@ class CashbalanceTableViewCell: UITableViewCell {
     
     private func setupConstraint() {
         NSLayoutConstraint.activate([
-            // 由左上到右下，依照UI來設計
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12),
+            titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 24),
+            
+            eyeBtn.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 8),
+            eyeBtn.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            eyeBtn.heightAnchor.constraint(equalToConstant: 24),
+            eyeBtn.widthAnchor.constraint(equalToConstant: 24),
+            
+            usdTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            usdTitleLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
+            
+            usdSubTitleLabel.topAnchor.constraint(equalTo: usdTitleLabel.bottomAnchor),
+            usdSubTitleLabel.leftAnchor.constraint(equalTo: usdTitleLabel.leftAnchor),
+            usdSubTitleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -24),
+            
+            khrTitleLabel.topAnchor.constraint(equalTo: usdSubTitleLabel.bottomAnchor, constant: 8),
+            khrTitleLabel.leftAnchor.constraint(equalTo: usdSubTitleLabel.leftAnchor),
+            
+            khrSubTitleLabel.topAnchor.constraint(equalTo: khrTitleLabel.bottomAnchor),
+            khrSubTitleLabel.leftAnchor.constraint(equalTo: khrTitleLabel.leftAnchor),
+            khrSubTitleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -24),
+            khrSubTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10),
         ])
     }
     
