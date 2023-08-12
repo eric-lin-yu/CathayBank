@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     private let bottomBarView: UIView = {
        let view = UIView()
         view.backgroundColor = .white
+        view.addBottomBarStyle()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -191,8 +192,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraint()
-        
-        bottomBarView.addBottomBarStyle()
     }
 
 }
