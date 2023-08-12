@@ -121,8 +121,7 @@
 				89A631D52A862DEE00652A64 /* SceneDelegate.swift */,
 				89A632092A86394500652A64 /* DataModel */,
 				89A631D72A862DEE00652A64 /* ViewController.swift */,
-				89A632052A86351600652A64 /* CashbalanceTableViewCell.swift */,
-				89A632072A86368600652A64 /* AdTableViewCell.swift */,
+				89A632172A87372B00652A64 /* Cell */,
 				89A631D92A862DEE00652A64 /* Main.storyboard */,
 				89A631DE2A862DF000652A64 /* LaunchScreen.storyboard */,
 				89A631DC2A862DF000652A64 /* Assets.xcassets */,
@@ -168,6 +167,15 @@
 				89A632122A863AC700652A64 /* ImageView+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		89A632172A87372B00652A64 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				89A632052A86351600652A64 /* CashbalanceTableViewCell.swift */,
+				89A632072A86368600652A64 /* AdTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
