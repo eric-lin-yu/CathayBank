@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		895421E22A8FB76B00A7E1BC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895421E12A8FB76B00A7E1BC /* APIManager.swift */; };
+		895421E62A8FB8E700A7E1BC /* AmountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895421E52A8FB8E700A7E1BC /* AmountViewModel.swift */; };
 		89A631D42A862DEE00652A64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A631D32A862DEE00652A64 /* AppDelegate.swift */; };
 		89A631D62A862DEE00652A64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A631D52A862DEE00652A64 /* SceneDelegate.swift */; };
 		89A631D82A862DEE00652A64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A631D72A862DEE00652A64 /* ViewController.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		895421E12A8FB76B00A7E1BC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		895421E52A8FB8E700A7E1BC /* AmountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountViewModel.swift; sourceTree = "<group>"; };
 		89A631D02A862DEE00652A64 /* CathayBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CathayBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A631D32A862DEE00652A64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A631D52A862DEE00652A64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		895421E32A8FB7AA00A7E1BC /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				895421E12A8FB76B00A7E1BC /* APIManager.swift */,
+				89A6321A2A874C1B00652A64 /* API.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		895421E42A8FB83200A7E1BC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				895421E52A8FB8E700A7E1BC /* AmountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		89A631C72A862DEE00652A64 = {
 			isa = PBXGroup;
 			children = (
@@ -125,9 +146,10 @@
 			children = (
 				89A631D32A862DEE00652A64 /* AppDelegate.swift */,
 				89A631D52A862DEE00652A64 /* SceneDelegate.swift */,
-				89A6321A2A874C1B00652A64 /* API.swift */,
+				895421E32A8FB7AA00A7E1BC /* APIManager */,
 				89A632092A86394500652A64 /* DataModel */,
 				89A631D72A862DEE00652A64 /* ViewController.swift */,
+				895421E42A8FB83200A7E1BC /* ViewModel */,
 				89A632172A87372B00652A64 /* Cell */,
 				89A631D92A862DEE00652A64 /* Main.storyboard */,
 				89A631DE2A862DF000652A64 /* LaunchScreen.storyboard */,
@@ -318,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895421E22A8FB76B00A7E1BC /* APIManager.swift in Sources */,
 				89A632082A86368600652A64 /* AdTableViewCell.swift in Sources */,
 				89A6320E2A86394500652A64 /* AmountModel.swift in Sources */,
 				89A632132A863AC700652A64 /* ImageView+Extension.swift in Sources */,
@@ -325,6 +348,7 @@
 				89A6320F2A86394500652A64 /* NotificationModel.swift in Sources */,
 				89A632042A86322F00652A64 /* UIColorSets.swift in Sources */,
 				89A6321B2A874C1B00652A64 /* API.swift in Sources */,
+				895421E62A8FB8E700A7E1BC /* AmountViewModel.swift in Sources */,
 				89A631D82A862DEE00652A64 /* ViewController.swift in Sources */,
 				89A632162A871E0F00652A64 /* UIView+Extension.swift in Sources */,
 				89A631D42A862DEE00652A64 /* AppDelegate.swift in Sources */,
