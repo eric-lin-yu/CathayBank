@@ -7,38 +7,58 @@
 
 import Foundation
 
-struct SavingsViewModel {
-    private let apiManager = APIManager.shared
+struct AmountViewModel {
+    let shared = APIManager.shared
     
-    func fetchUSDSavings(completion: @escaping (Result<[AmountAccount], Error>) -> Void) {
-        apiManager.request(endpoint: APIInfo.firstUSD, method: .get) { result in
-            switch result {
-            case .success(let data):
-                do {
-                    let savings = try JSONDecoder().decode([AmountAccount].self, from: data)
-                    completion(.success(savings))
-                } catch {
-                    completion(.failure(error))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+    // USD First
+    func getFirstUSDSaving(completion: @escaping (APIResult) -> Void) {
+        shared.request(endpoint: APIInfo.firstUSD, method: .get, completion: completion)
     }
     
-    func fetchKHRSavings(completion: @escaping (Result<[AmountAccount], Error>) -> Void) {
-        apiManager.request(endpoint: APIInfo.firstKHR, method: .get) { result in
-            switch result {
-            case .success(let data):
-                do {
-                    let savings = try JSONDecoder().decode([AmountAccount].self, from: data)
-                    completion(.success(savings))
-                } catch {
-                    completion(.failure(error))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+    func getFirstUSDFixedDeposited(completion: @escaping (APIResult) -> Void) {
+        shared.request(endpoint: APIInfo.firstUSDFixedDeposited, method: .get, completion: completion)
+    }
+    
+    func getFirstUSDDigital(completion: @escaping (APIResult) -> Void) {
+        shared.request(endpoint: APIInfo.firstUSDDigital, method: .get, completion: completion)
+    }
+    
+    // USD Pull Refresh
+    func getRefreshUSDSaving(completion: @escaping (APIResult) -> Void) {
+        shared.request(endpoint: APIInfo.refreshUSD, method: .get, completion: completion)
+    }
+    
+    func getRefreshUSDFixedDeposited(completion: @escaping (APIResult) -> Void) {
+        shared.request(endpoint: APIInfo.refreshUSDFixedDeposited, method: .get, completion: completion)
+    }
+    
+    func getRefreshUSDDigital(completion: @escaping (APIResult) -> Void) {
+        shared.request(endpoint: APIInfo.refreshUSDDigital, method: .get, completion: completion)
+    }
+    
+    // KHR First
+    func getFirstKHRSaving(completion: @escaping (APIResult) -> Void) {
+        shared.request(endpoint: APIInfo.firstKHR, method: .get, completion: completion)
+    }
+    
+    func getFirstKHRFixedDeposited(completion: @escaping (APIResult) -> Void) {
+        shared.request(endpoint: APIInfo.firstKHRFixedDeposited, method: .get, completion: completion)
+    }
+    
+    func getFirstKHRDigital(completion: @escaping (APIResult) -> Void) {
+        shared.request(endpoint: APIInfo.firstKHRDigital, method: .get, completion: completion)
+    }
+    
+    // KHR Pull Refresh
+    func getRefreshKHRSaving(completion: @escaping (APIResult) -> Void) {
+        shared.request(endpoint: APIInfo.refreshKHR, method: .get, completion: completion)
+    }
+    
+    func getRefreshKHRFixedDeposited(completion: @escaping (APIResult) -> Void) {
+        shared.request(endpoint: APIInfo.refreshKHRFixedDeposited, method: .get, completion: completion)
+    }
+    
+    func getRefreshKHRDigital(completion: @escaping (APIResult) -> Void) {
+        shared.request(endpoint: APIInfo.refreshKHRDigital, method: .get, completion: completion)
     }
 }
