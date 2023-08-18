@@ -147,6 +147,9 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
+        
         let useCells = [CashbalanceTableViewCell.self]
         useCells.forEach {
             tableView.register($0.self, forCellReuseIdentifier: $0.storyboardIdentifier)
