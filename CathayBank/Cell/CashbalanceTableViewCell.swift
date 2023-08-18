@@ -14,6 +14,7 @@ class CashbalanceTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = .clear
         setupViews()
         setupConstraint()
     }
@@ -31,6 +32,7 @@ class CashbalanceTableViewCell: UITableViewCell {
     private let eyeBtn: UIButton = {
         let button = UIButton()
         let image = UIImage(named: "iconEye01On")
+        button.setImage(image, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -69,7 +71,7 @@ class CashbalanceTableViewCell: UITableViewCell {
         return label
     }()
     
-    // Parameters ....
+    var isShowAmount: Bool = false
     
     //MARK: - setup
     private func setupViews() {
@@ -81,13 +83,14 @@ class CashbalanceTableViewCell: UITableViewCell {
             khrTitleLabel,
             khrSubTitleLabel,
         ]
-        viewsToAdd.forEach { self.addSubview($0) }
+        viewsToAdd.forEach { self.contentView.addSubview($0) }
+        eyeBtn.addTarget(self, action: #selector(eyeAmountAction), for: .touchUpInside)
     }
     
     private func setupConstraint() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-            titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 24),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 24),
             
             eyeBtn.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 8),
             eyeBtn.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
@@ -99,20 +102,35 @@ class CashbalanceTableViewCell: UITableViewCell {
             
             usdSubTitleLabel.topAnchor.constraint(equalTo: usdTitleLabel.bottomAnchor),
             usdSubTitleLabel.leftAnchor.constraint(equalTo: usdTitleLabel.leftAnchor),
-            usdSubTitleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -24),
+            usdSubTitleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -24),
             
             khrTitleLabel.topAnchor.constraint(equalTo: usdSubTitleLabel.bottomAnchor, constant: 8),
             khrTitleLabel.leftAnchor.constraint(equalTo: usdSubTitleLabel.leftAnchor),
             
             khrSubTitleLabel.topAnchor.constraint(equalTo: khrTitleLabel.bottomAnchor),
             khrSubTitleLabel.leftAnchor.constraint(equalTo: khrTitleLabel.leftAnchor),
-            khrSubTitleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -24),
-            khrSubTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10),
+            khrSubTitleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -24),
+            khrSubTitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
         ])
     }
     
+    @objc func eyeAmountAction() {
+        if isShowAmount {
+            let image = UIImage(named: "iconEye01On")
+            eyeBtn.setImage(image, for: .normal)
+            isShowAmount = false
+        } else {
+            let image = UIImage(named: "iconEye02Off")
+            eyeBtn.setImage(image, for: .normal)
+            usdSubTitleLabel.text = "*****"
+            khrSubTitleLabel.text = "*****"
+            isShowAmount = true
+        }
+    }
+    
     func configure() {
-        //...
+        usdSubTitleLabel.text = "123"
+        khrSubTitleLabel.text = "*123"
     }
 
 }
