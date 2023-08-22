@@ -21,30 +21,25 @@ struct APIInfo {
     // Banner
     public static let bannerList = baseDomain + "banner.json"
     
-    // Amount - First Open
-    private static let amountFirstOpenDomain = baseDomain + "amount/firstOpen/"
-    
     // USD
-    public static let firstUSD = amountFirstOpenDomain + "usdSavings1.json" // Savings
-    public static let firstUSDFixedDeposited = amountFirstOpenDomain + "usdSavings1.json" // Fixed Deposits
-    public static let firstUSDDigital = amountFirstOpenDomain + "usdDigital1.json" // Digital Accounts
+    public static let firstUSD = baseDomain + "usdSavings1.json" // Savings
+    public static let firstUSDFixedDeposited = baseDomain + "usdFixed1.json" // Fixed Deposits
+    public static let firstUSDDigital = baseDomain + "usdDigital1.json" // Digital Accounts
     
     // KHR
-    public static let firstKHR = amountFirstOpenDomain + "khrSavings1.json" // Savings
-    public static let firstKHRFixedDeposited = amountFirstOpenDomain + "khrFixed1.json" // Fixed Deposits
-    public static let firstKHRDigital = amountFirstOpenDomain + "khrDigital1.json" // Digital Accounts
+    public static let firstKHR = baseDomain + "khrSavings1.json" // Savings
+    public static let firstKHRFixedDeposited = baseDomain + "khrFixed1.json" // Fixed Deposits
+    public static let firstKHRDigital = baseDomain + "khrDigital1.json" // Digital Accounts
     
-    // Amount - Pull Refresh
-    private static let amountRefreshDomain = baseDomain + "amount/pullRefresh/"
     
     // USD
-    public static let refreshUSD = amountRefreshDomain + "usdSavings2.json" // Savings
-    public static let refreshUSDFixedDeposited = amountRefreshDomain + "usdSavings2.json" // Fixed Deposits
-    public static let refreshUSDDigital = amountRefreshDomain + "usdDigital2.json" // Digital Accounts
+    public static let refreshUSD = baseDomain + "usdSavings2.json" // Savings
+    public static let refreshUSDFixedDeposited = baseDomain + "usdFixed2.json" // Fixed Deposits
+    public static let refreshUSDDigital = baseDomain + "usdDigital2.json" // Digital Accounts
     
     // KHR
-    public static let refreshKHR = amountRefreshDomain + "khrSavings2.json" // Savings
-    public static let refreshKHRFixedDeposited = amountRefreshDomain + "khrFixed2.json" // Fixed Deposits
-    public static let refreshKHRDigital = amountRefreshDomain + "khrDigital2.json" // Digital Accounts
+    public static let refreshKHR = baseDomain + "khrSavings2.json" // Savings
+    public static let refreshKHRFixedDeposited = baseDomain + "khrFixed2.json" // Fixed Deposits
+    public static let refreshKHRDigital = baseDomain + "khrDigital2.json" // Digital Accounts
 }
 
