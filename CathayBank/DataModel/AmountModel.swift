@@ -9,19 +9,21 @@ import Foundation
 struct AmountResponse: Codable {
     let msgCode: String
     let msgContent: String
-    let result: AmountResult
+    let result: [String: [AmountModel]]
+    
+    init(msgCode: String, msgContent: String, result: [String: [AmountModel]]) {
+        self.msgCode = msgCode
+        self.msgContent = msgContent
+        self.result = result
+    }
 }
 
-struct AmountResult: Codable {
-    let savingsList: [AmountAccount]
-}
-
-struct AmountAccount: Codable {
+struct AmountModel: Codable {
     let account: String
     let curr: String
-    let balance: Double
+    let balance: Float
     
-    init(account: String, curr: String, balance: Double) {
+    init(account: String, curr: String, balance: Float) {
         self.account = account
         self.curr = curr
         self.balance = balance
