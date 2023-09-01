@@ -19,6 +19,14 @@ enum CathayHomeTab: Int, CaseIterable {
 }
 
 class ViewController: UIViewController {
+    // constraint Spacing
+    private let xSpacing: CGFloat = 5
+    private let ySpacing: CGFloat = 24
+    private let userImageViewSize: CGFloat = 40
+    private let btnSize: CGFloat = 24
+    private let bottomSpacing: CGFloat = 22
+    private let bottomViewHeight: CGFloat = 50
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -70,10 +78,6 @@ class ViewController: UIViewController {
         return stackView
     }()
 
-    // constraint Spacing
-    private let userImageViewSize: CGFloat = 40
-    private let btnSize: CGFloat = 24
-    
     //MARK: - setup UI
     private func setupViews() {
         let viewsToAdd: [UIView] = [
@@ -92,25 +96,25 @@ class ViewController: UIViewController {
         let bottomSafeArea = view.safeAreaLayoutGuide.bottomAnchor
         
         NSLayoutConstraint.activate([
-            userImageView.topAnchor.constraint(equalTo: topSafeArea, constant: 5),
-            userImageView.leftAnchor.constraint(equalTo: leftSafeArea, constant: 24),
+            userImageView.topAnchor.constraint(equalTo: topSafeArea, constant: xSpacing),
+            userImageView.leftAnchor.constraint(equalTo: leftSafeArea, constant: ySpacing),
             userImageView.heightAnchor.constraint(equalToConstant: userImageViewSize),
             userImageView.widthAnchor.constraint(equalToConstant: userImageViewSize),
             
-            notificationBtn.rightAnchor.constraint(equalTo: rightSafeArea, constant: -24),
+            notificationBtn.rightAnchor.constraint(equalTo: rightSafeArea, constant: -ySpacing),
             notificationBtn.centerYAnchor.constraint(equalTo: userImageView.centerYAnchor),
             notificationBtn.heightAnchor.constraint(equalToConstant: btnSize),
             notificationBtn.widthAnchor.constraint(equalToConstant: btnSize),
             
-            tableView.topAnchor.constraint(equalTo: userImageView.bottomAnchor, constant: 5),
+            tableView.topAnchor.constraint(equalTo: userImageView.bottomAnchor, constant: xSpacing),
             tableView.leftAnchor.constraint(equalTo: leftSafeArea),
             tableView.rightAnchor.constraint(equalTo: rightSafeArea),
             tableView.bottomAnchor.constraint(equalTo: bottomSafeArea),
             
-            bottomBarView.leftAnchor.constraint(equalTo: leftSafeArea, constant: 24),
-            bottomBarView.rightAnchor.constraint(equalTo: rightSafeArea, constant: -24),
-            bottomBarView.bottomAnchor.constraint(equalTo: bottomSafeArea, constant: -22),
-            bottomBarView.heightAnchor.constraint(equalToConstant: 50),
+            bottomBarView.leftAnchor.constraint(equalTo: leftSafeArea, constant: ySpacing),
+            bottomBarView.rightAnchor.constraint(equalTo: rightSafeArea, constant: -ySpacing),
+            bottomBarView.bottomAnchor.constraint(equalTo: bottomSafeArea, constant: -bottomSpacing),
+            bottomBarView.heightAnchor.constraint(equalToConstant: bottomViewHeight),
             
             bottomBarStackView.topAnchor.constraint(equalTo: bottomBarView.topAnchor),
             bottomBarStackView.leftAnchor.constraint(equalTo: bottomBarView.leftAnchor),
