@@ -17,10 +17,7 @@ struct APIInfo {
     // Notifications
     public static let notificationList = baseDomain + "notificationList.json"
     public static let emptyNotificationList = baseDomain + "emptyNotificationList.json"
-    
-    // Banner
-    public static let bannerList = baseDomain + "banner.json"
-    
+
     // 初次登入
     // USD
     public static let firstUSD = baseDomain + "usdSavings1.json" // Savings
