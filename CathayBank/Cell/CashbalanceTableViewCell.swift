@@ -123,14 +123,14 @@ class CashbalanceTableViewCell: UITableViewCell {
     
     @objc func eyeAmountAction() {
         if isShowAmount {
-            let image = UIImage(named: "iconEye01On")
+            let image = UIImage(named: "iconEye02Off")
             eyeBtn.setImage(image, for: .normal)
             isShowAmount = false
             
             usdSubTitleLabel.attributedText = NSAttributedString(string: "********")
             khrSubTitleLabel.attributedText = NSAttributedString(string: "********")
         } else {
-            let image = UIImage(named: "iconEye02Off")
+            let image = UIImage(named: "iconEye01On")
             eyeBtn.setImage(image, for: .normal)
             isShowAmount = true
             
