@@ -161,8 +161,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         switch tab {
         case .cashbalance:
             return cashbalanceCell(on: tableView, at: indexPath)
-        default:
-            break
+        case .favorite:
+            print("")
+        case .ad:
+            print("")
         }
 
         return UITableViewCell()
