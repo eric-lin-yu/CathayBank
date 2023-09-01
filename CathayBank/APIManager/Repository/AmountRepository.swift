@@ -38,7 +38,7 @@ class AmountRepository {
     }
 
     /// 第一次登入 USD 金額
-    func getFirstUSDTotal(completion: @escaping (Result<Float, Error>) -> Void) {
+    func getFirstLoginUSDBalance(completion: @escaping (Result<Float, Error>) -> Void) {
         let savingsURL = APIInfo.firstUSD
         let fixedDepositsURL = APIInfo.firstUSDFixedDeposited
         let digitalAccountsURL = APIInfo.firstUSDDigital
@@ -87,7 +87,7 @@ class AmountRepository {
     
     
     /// 第一次登入 KHR 金額
-    func getFirstKHRTotal(completion: @escaping (Result<Float, Error>) -> Void) {
+    func getFirstLoginKHRBalance(completion: @escaping (Result<Float, Error>) -> Void) {
         let savingsURL = APIInfo.firstKHR
         let fixedDepositsURL = APIInfo.firstKHRFixedDeposited
         let digitalAccountsURL = APIInfo.firstKHRDigital
