@@ -134,5 +134,101 @@ class AmountRepository {
         }
     }
     
+    
+    /// 重整抓取 USD
+    func getRefreshUSDBalance(completion: @escaping (Result<Float, Error>) -> Void) {
+        let savingsURL = APIInfo.refreshUSD
+        let fixedDepositsURL = APIInfo.refreshUSDFixedDeposited
+        let digitalAccountsURL = APIInfo.refreshUSDDigital
+        
+        let dispatchGroup = DispatchGroup()
+        var totalBalances: [Float] = []
+        
+        dispatchGroup.enter()
+        getTotalBalance(for: savingsURL) { result in
+            switch result {
+            case .success(let totalBalance):
+                totalBalances.append(totalBalance)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        getTotalBalance(for: fixedDepositsURL) { result in
+            switch result {
+            case .success(let totalBalance):
+                totalBalances.append(totalBalance)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        getTotalBalance(for: digitalAccountsURL) { result in
+            switch result {
+            case .success(let totalBalance):
+                totalBalances.append(totalBalance)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            let totalSum = totalBalances.reduce(0.0, +)
+            completion(.success(totalSum))
+        }
+    }
+    
+    /// 重整抓取 KHR
+    func getRefreshKHRBalance(completion: @escaping (Result<Float, Error>) -> Void) {
+        let savingsURL = APIInfo.refreshKHR
+        let fixedDepositsURL = APIInfo.refreshKHRFixedDeposited
+        let digitalAccountsURL = APIInfo.refreshKHRDigital
+        
+        let dispatchGroup = DispatchGroup()
+        var totalBalances: [Float] = []
+        
+        dispatchGroup.enter()
+        getTotalBalance(for: savingsURL) { result in
+            switch result {
+            case .success(let totalBalance):
+                totalBalances.append(totalBalance)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        getTotalBalance(for: fixedDepositsURL) { result in
+            switch result {
+            case .success(let totalBalance):
+                totalBalances.append(totalBalance)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        getTotalBalance(for: digitalAccountsURL) { result in
+            switch result {
+            case .success(let totalBalance):
+                totalBalances.append(totalBalance)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            let totalSum = totalBalances.reduce(0.0, +)
+            completion(.success(totalSum))
+        }
+    }
 }
 
