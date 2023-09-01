@@ -11,6 +11,7 @@
 		895421E22A8FB76B00A7E1BC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895421E12A8FB76B00A7E1BC /* APIManager.swift */; };
 		895421E62A8FB8E700A7E1BC /* AmountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895421E52A8FB8E700A7E1BC /* AmountViewModel.swift */; };
 		89997C492AA1C7EA00CA27F4 /* ViewController+TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89997C482AA1C7EA00CA27F4 /* ViewController+TabBar.swift */; };
+		89997C4B2AA1CEB300CA27F4 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89997C4A2AA1CEB300CA27F4 /* FavoriteTableViewCell.swift */; };
 		89A631D42A862DEE00652A64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A631D32A862DEE00652A64 /* AppDelegate.swift */; };
 		89A631D62A862DEE00652A64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A631D52A862DEE00652A64 /* SceneDelegate.swift */; };
 		89A631D82A862DEE00652A64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A631D72A862DEE00652A64 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		895421E12A8FB76B00A7E1BC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		895421E52A8FB8E700A7E1BC /* AmountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountViewModel.swift; sourceTree = "<group>"; };
 		89997C482AA1C7EA00CA27F4 /* ViewController+TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TabBar.swift"; sourceTree = "<group>"; };
+		89997C4A2AA1CEB300CA27F4 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		89A631D02A862DEE00652A64 /* CathayBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CathayBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A631D32A862DEE00652A64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A631D52A862DEE00652A64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,8 +197,8 @@
 		89A632092A86394500652A64 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				89A6320A2A86394500652A64 /* AmountModel.swift */,
 				89A6320B2A86394500652A64 /* NotificationModel.swift */,
+				89A6320A2A86394500652A64 /* AmountModel.swift */,
 				89A6320C2A86394500652A64 /* FavoriteModel.swift */,
 				89A6320D2A86394500652A64 /* BannerModel.swift */,
 			);
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				89A632052A86351600652A64 /* CashbalanceTableViewCell.swift */,
+				89997C4A2AA1CEB300CA27F4 /* FavoriteTableViewCell.swift */,
 				89A632072A86368600652A64 /* AdTableViewCell.swift */,
 			);
 			path = Cell;
@@ -363,6 +366,7 @@
 				89A632042A86322F00652A64 /* UIColorSets.swift in Sources */,
 				89A6321B2A874C1B00652A64 /* APIInfo.swift in Sources */,
 				89997C492AA1C7EA00CA27F4 /* ViewController+TabBar.swift in Sources */,
+				89997C4B2AA1CEB300CA27F4 /* FavoriteTableViewCell.swift in Sources */,
 				895421E62A8FB8E700A7E1BC /* AmountViewModel.swift in Sources */,
 				89A631D82A862DEE00652A64 /* ViewController.swift in Sources */,
 				8940656F2A90F9C70093CB34 /* AmountRepository.swift in Sources */,
