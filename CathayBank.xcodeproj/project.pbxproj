@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8940656F2A90F9C70093CB34 /* AmountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940656B2A90F9C70093CB34 /* AmountRepository.swift */; };
 		895421E22A8FB76B00A7E1BC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895421E12A8FB76B00A7E1BC /* APIManager.swift */; };
 		895421E62A8FB8E700A7E1BC /* AmountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895421E52A8FB8E700A7E1BC /* AmountViewModel.swift */; };
 		89A631D42A862DEE00652A64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A631D32A862DEE00652A64 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8940656B2A90F9C70093CB34 /* AmountRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountRepository.swift; sourceTree = "<group>"; };
 		895421E12A8FB76B00A7E1BC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		895421E52A8FB8E700A7E1BC /* AmountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountViewModel.swift; sourceTree = "<group>"; };
 		89A631D02A862DEE00652A64 /* CathayBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CathayBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,11 +106,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		894065692A90F9C70093CB34 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8940656B2A90F9C70093CB34 /* AmountRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		895421E32A8FB7AA00A7E1BC /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
 				895421E12A8FB76B00A7E1BC /* APIManager.swift */,
 				89A6321A2A874C1B00652A64 /* APIInfo.swift */,
+				894065692A90F9C70093CB34 /* Repository */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -148,8 +159,8 @@
 				89A631D52A862DEE00652A64 /* SceneDelegate.swift */,
 				895421E32A8FB7AA00A7E1BC /* APIManager */,
 				89A632092A86394500652A64 /* DataModel */,
-				89A631D72A862DEE00652A64 /* ViewController.swift */,
 				895421E42A8FB83200A7E1BC /* ViewModel */,
+				89A631D72A862DEE00652A64 /* ViewController.swift */,
 				89A632172A87372B00652A64 /* Cell */,
 				89A631D92A862DEE00652A64 /* Main.storyboard */,
 				89A631DE2A862DF000652A64 /* LaunchScreen.storyboard */,
@@ -350,6 +361,7 @@
 				89A6321B2A874C1B00652A64 /* APIInfo.swift in Sources */,
 				895421E62A8FB8E700A7E1BC /* AmountViewModel.swift in Sources */,
 				89A631D82A862DEE00652A64 /* ViewController.swift in Sources */,
+				8940656F2A90F9C70093CB34 /* AmountRepository.swift in Sources */,
 				89A632162A871E0F00652A64 /* UIView+Extension.swift in Sources */,
 				89A631D42A862DEE00652A64 /* AppDelegate.swift in Sources */,
 				89A632102A86394500652A64 /* FavoriteModel.swift in Sources */,
