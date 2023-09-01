@@ -13,10 +13,21 @@ extension ViewController {
         bottomBarView.addBottomBarStyle()
         bottomBarView.addSubview(bottomBarStackView)
         
-        let home = createView(image: "HomeActive", title: "Home", tapAction: #selector(showHomeTab))
-        let account = createView(image: "AccountDefault", title: "Account", tapAction: #selector(showAccountTab))
-        let location = createView(image: "LocationActive", title: "Location", tapAction: #selector(showLocationTab))
-        let service = createView(image: "Service", title: "Service", tapAction: #selector(showServiceTab))
+        let home = createView(image: "HomeActive",
+                              title: "Home",
+                              tapAction: #selector(showHomeTab))
+        
+        let account = createView(image: "AccountDefault",
+                                 title: "Account",
+                                 tapAction: #selector(showAccountTab))
+        
+        let location = createView(image: "LocationActive",
+                                  title: "Location",
+                                  tapAction: #selector(showLocationTab))
+        
+        let service = createView(image: "Service",
+                                 title: "Service",
+                                 tapAction: #selector(showServiceTab))
         
         let viewsToAddBottomBarStack: [UIView] = [home, account, location, service]
         viewsToAddBottomBarStack.forEach { bottomBarStackView.addArrangedSubview($0) }
