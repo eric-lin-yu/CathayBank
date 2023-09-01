@@ -9,8 +9,7 @@ import UIKit
 
 enum CathayHomeTab: Int, CaseIterable {
     case cashbalance = 0
-    case bottonView
-    case myFavorite
+    case favorite
     case ad
     
     static var count: Int {
