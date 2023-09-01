@@ -21,6 +21,7 @@ struct APIInfo {
     // Banner
     public static let bannerList = baseDomain + "banner.json"
     
+    // 初次登入
     // USD
     public static let firstUSD = baseDomain + "usdSavings1.json" // Savings
     public static let firstUSDFixedDeposited = baseDomain + "usdFixed1.json" // Fixed Deposits
@@ -31,7 +32,7 @@ struct APIInfo {
     public static let firstKHRFixedDeposited = baseDomain + "khrFixed1.json" // Fixed Deposits
     public static let firstKHRDigital = baseDomain + "khrDigital1.json" // Digital Accounts
     
-    
+    // 重整抓取資料
     // USD
     public static let refreshUSD = baseDomain + "usdSavings2.json" // Savings
     public static let refreshUSDFixedDeposited = baseDomain + "usdFixed2.json" // Fixed Deposits
