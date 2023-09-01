@@ -161,18 +161,15 @@
 			children = (
 				89A631D32A862DEE00652A64 /* AppDelegate.swift */,
 				89A631D52A862DEE00652A64 /* SceneDelegate.swift */,
-				895421E32A8FB7AA00A7E1BC /* APIManager */,
 				89A632092A86394500652A64 /* DataModel */,
 				895421E42A8FB83200A7E1BC /* ViewModel */,
 				89A631D72A862DEE00652A64 /* ViewController.swift */,
 				89997C482AA1C7EA00CA27F4 /* ViewController+TabBar.swift */,
-				89A632172A87372B00652A64 /* Cell */,
-				89A631D92A862DEE00652A64 /* Main.storyboard */,
-				89A631DE2A862DF000652A64 /* LaunchScreen.storyboard */,
+				89FACACC2AA1E3EC00510335 /* Internal Library */,
 				89A631DC2A862DF000652A64 /* Assets.xcassets */,
 				89A631E12A862DF000652A64 /* Info.plist */,
-				89A632032A86322F00652A64 /* UIColorSets.swift */,
-				89A632142A863AF100652A64 /* Extension */,
+				89A631D92A862DEE00652A64 /* Main.storyboard */,
+				89A631DE2A862DF000652A64 /* LaunchScreen.storyboard */,
 			);
 			path = CathayBank;
 			sourceTree = "<group>";
@@ -224,6 +221,17 @@
 				89A632072A86368600652A64 /* AdTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		89FACACC2AA1E3EC00510335 /* Internal Library */ = {
+			isa = PBXGroup;
+			children = (
+				895421E32A8FB7AA00A7E1BC /* APIManager */,
+				89A632172A87372B00652A64 /* Cell */,
+				89A632142A863AF100652A64 /* Extension */,
+				89A632032A86322F00652A64 /* UIColorSets.swift */,
+			);
+			path = "Internal Library";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
