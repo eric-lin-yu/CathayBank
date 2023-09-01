@@ -246,7 +246,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     private func cashbalanceCell(on tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CashbalanceTableViewCell.self), for: indexPath) as! CashbalanceTableViewCell
         
-        cell.configure()
+        //TODO: reload 後改傳 false 機制
+        cell.configure(isFirstLogin: true)
         
         return cell
     }
