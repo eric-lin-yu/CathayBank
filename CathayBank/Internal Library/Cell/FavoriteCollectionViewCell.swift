@@ -46,6 +46,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
         let leftContentViewAnchor = contentView.leftAnchor
         let rightContentViewAnchor = contentView.rightAnchor
         let bottomContentViewAnchor = contentView.bottomAnchor
+        
         NSLayoutConstraint.activate([
             favoriteImageView.topAnchor.constraint(equalTo: topContentViewAnchor, constant: 2),
             favoriteImageView.leftAnchor.constraint(equalTo: leftContentViewAnchor, constant: 2),
