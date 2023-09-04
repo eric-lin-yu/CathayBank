@@ -10,14 +10,8 @@ import Foundation
 class AmountRepository {
     public static let shared = AmountRepository()
     
-    private let apiManager: APIManager
-    
-    private init(apiManager: APIManager = APIManager.shared) {
-        self.apiManager = apiManager
-    }
-    
     private func getTotalBalance(for endpoint: String, completion: @escaping (Result<Float, Error>) -> Void) {
-        apiManager.request(endpoint: endpoint, method: .get) { result in
+        APIManager.shared.request(endpoint: endpoint, method: .get) { result in
             switch result {
             case .success(let data):
                 do {
