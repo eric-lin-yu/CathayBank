@@ -129,7 +129,9 @@ class ViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
         
-        let useCells = [CashbalanceTableViewCell.self]
+        let useCells = [CashbalanceTableViewCell.self,
+                        FavoriteTableViewCell.self,
+                       ]
         useCells.forEach {
             tableView.register($0.self, forCellReuseIdentifier: $0.storyboardIdentifier)
         }
@@ -150,7 +152,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return CathayHomeTab.count
-        return 1
+        return 2
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -162,7 +164,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         case .cashbalance:
             return cashbalanceCell(on: tableView, at: indexPath)
         case .favorite:
-            print("")
+            return favoriteTableViewCell(on: tableView, at: indexPath)
         case .ad:
             print("")
         }
@@ -172,6 +174,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     private func cashbalanceCell(on tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CashbalanceTableViewCell.self), for: indexPath) as! CashbalanceTableViewCell
+        
+        //TODO: reload 後改傳 false 機制
+        cell.configure(isFirstLogin: true)
+        
+        return cell
+    }
+    
+    private func favoriteTableViewCell(on tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FavoriteTableViewCell.self), for: indexPath) as! FavoriteTableViewCell
         
         //TODO: reload 後改傳 false 機制
         cell.configure(isFirstLogin: true)
