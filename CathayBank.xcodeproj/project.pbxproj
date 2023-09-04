@@ -33,6 +33,8 @@
 		89A632192A87450800652A64 /* StoryboardSupports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A632182A87450800652A64 /* StoryboardSupports.swift */; };
 		89A6321B2A874C1B00652A64 /* APIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6321A2A874C1B00652A64 /* APIInfo.swift */; };
 		89A6321D2A874CCB00652A64 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6321C2A874CCB00652A64 /* String+Extension.swift */; };
+		89FACACE2AA56E8800510335 /* DataRepository Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACACD2AA56E8800510335 /* DataRepository Repository.swift */; };
+		89FACAD02AA56F7900510335 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACACF2AA56F7900510335 /* FavoriteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		89A632182A87450800652A64 /* StoryboardSupports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSupports.swift; sourceTree = "<group>"; };
 		89A6321A2A874C1B00652A64 /* APIInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInfo.swift; sourceTree = "<group>"; };
 		89A6321C2A874CCB00652A64 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		89FACACD2AA56E8800510335 /* DataRepository Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRepository Repository.swift"; sourceTree = "<group>"; };
+		89FACACF2AA56F7900510335 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 		894065692A90F9C70093CB34 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				89FACACD2AA56E8800510335 /* DataRepository Repository.swift */,
 				8940656B2A90F9C70093CB34 /* AmountRepository.swift */,
 			);
 			path = Repository;
@@ -132,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				895421E52A8FB8E700A7E1BC /* AmountViewModel.swift */,
+				89FACACF2AA56F7900510335 /* FavoriteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 			children = (
 				89A631D32A862DEE00652A64 /* AppDelegate.swift */,
 				89A631D52A862DEE00652A64 /* SceneDelegate.swift */,
+				895421E32A8FB7AA00A7E1BC /* APIManager */,
 				89A632092A86394500652A64 /* DataModel */,
 				895421E42A8FB83200A7E1BC /* ViewModel */,
 				89A631D72A862DEE00652A64 /* ViewController.swift */,
@@ -226,7 +233,6 @@
 		89FACACC2AA1E3EC00510335 /* Internal Library */ = {
 			isa = PBXGroup;
 			children = (
-				895421E32A8FB7AA00A7E1BC /* APIManager */,
 				89A632172A87372B00652A64 /* Cell */,
 				89A632142A863AF100652A64 /* Extension */,
 				89A632032A86322F00652A64 /* UIColorSets.swift */,
@@ -374,12 +380,14 @@
 				89A632042A86322F00652A64 /* UIColorSets.swift in Sources */,
 				89A6321B2A874C1B00652A64 /* APIInfo.swift in Sources */,
 				89997C492AA1C7EA00CA27F4 /* ViewController+TabBar.swift in Sources */,
+				89FACAD02AA56F7900510335 /* FavoriteViewModel.swift in Sources */,
 				89997C4B2AA1CEB300CA27F4 /* FavoriteTableViewCell.swift in Sources */,
 				895421E62A8FB8E700A7E1BC /* AmountViewModel.swift in Sources */,
 				89A631D82A862DEE00652A64 /* ViewController.swift in Sources */,
 				8940656F2A90F9C70093CB34 /* AmountRepository.swift in Sources */,
 				89A632162A871E0F00652A64 /* UIView+Extension.swift in Sources */,
 				89A631D42A862DEE00652A64 /* AppDelegate.swift in Sources */,
+				89FACACE2AA56E8800510335 /* DataRepository Repository.swift in Sources */,
 				89A632102A86394500652A64 /* FavoriteModel.swift in Sources */,
 				89A631D62A862DEE00652A64 /* SceneDelegate.swift in Sources */,
 				89A632062A86351600652A64 /* CashbalanceTableViewCell.swift in Sources */,
