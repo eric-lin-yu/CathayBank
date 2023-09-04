@@ -35,7 +35,7 @@ class DataRepository {
         fetchData(for: FavoriteResponse.self, endpoint: favoriteURL) { result in
             switch result {
             case .success(let response):
-                let favoriteArray = response.result
+                let favoriteArray = response.result.favoriteList
                 completion(.success(favoriteArray))
             case .failure(let error):
                 completion(.failure(error))
@@ -49,7 +49,7 @@ class DataRepository {
         fetchData(for: FavoriteResponse.self, endpoint: favoriteURL) { result in
             switch result {
             case .success(let response):
-                let favoriteArray = response.result
+                let favoriteArray = response.result.favoriteList
                 completion(.success(favoriteArray))
             case .failure(let error):
                 completion(.failure(error))
