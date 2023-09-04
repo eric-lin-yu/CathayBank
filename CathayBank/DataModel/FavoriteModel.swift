@@ -7,9 +7,21 @@
 
 import Foundation
 
-struct FavoriteModel {
-    var nickname: String
-    var transType: String
+struct FavoriteResponse: Codable {
+    let msgCode: String
+    let msgContent: String
+    let result: [FavoriteModel]
+    
+    init(msgCode: String, msgContent: String, result: [FavoriteModel]) {
+        self.msgCode = msgCode
+        self.msgContent = msgContent
+        self.result = result
+    }
+}
+
+struct FavoriteModel: Codable {
+    let nickname: String
+    let transType: String
     
     init(nickname: String, transType: String) {
         self.nickname = nickname
