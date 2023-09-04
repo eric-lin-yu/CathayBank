@@ -23,7 +23,7 @@
 		89A631F72A862DF000652A64 /* CathayBankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A631F62A862DF000652A64 /* CathayBankUITestsLaunchTests.swift */; };
 		89A632042A86322F00652A64 /* UIColorSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A632032A86322F00652A64 /* UIColorSets.swift */; };
 		89A632062A86351600652A64 /* CashbalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A632052A86351600652A64 /* CashbalanceTableViewCell.swift */; };
-		89A632082A86368600652A64 /* AdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A632072A86368600652A64 /* AdTableViewCell.swift */; };
+		89A632082A86368600652A64 /* AdBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A632072A86368600652A64 /* AdBannerTableViewCell.swift */; };
 		89A6320E2A86394500652A64 /* AmountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6320A2A86394500652A64 /* AmountModel.swift */; };
 		89A6320F2A86394500652A64 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6320B2A86394500652A64 /* NotificationModel.swift */; };
 		89A632102A86394500652A64 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6320C2A86394500652A64 /* FavoriteModel.swift */; };
@@ -77,7 +77,7 @@
 		89A631F62A862DF000652A64 /* CathayBankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathayBankUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		89A632032A86322F00652A64 /* UIColorSets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorSets.swift; sourceTree = "<group>"; };
 		89A632052A86351600652A64 /* CashbalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbalanceTableViewCell.swift; sourceTree = "<group>"; };
-		89A632072A86368600652A64 /* AdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewCell.swift; sourceTree = "<group>"; };
+		89A632072A86368600652A64 /* AdBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerTableViewCell.swift; sourceTree = "<group>"; };
 		89A6320A2A86394500652A64 /* AmountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountModel.swift; sourceTree = "<group>"; };
 		89A6320B2A86394500652A64 /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		89A6320C2A86394500652A64 /* FavoriteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 				89A632052A86351600652A64 /* CashbalanceTableViewCell.swift */,
 				89997C4A2AA1CEB300CA27F4 /* FavoriteTableViewCell.swift */,
 				89FACAD12AA5B9DE00510335 /* FavoriteCollectionViewCell.swift */,
-				89A632072A86368600652A64 /* AdTableViewCell.swift */,
+				89A632072A86368600652A64 /* AdBannerTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -380,7 +380,7 @@
 				895421E22A8FB76B00A7E1BC /* APIManager.swift in Sources */,
 				89FACAD22AA5B9DE00510335 /* FavoriteCollectionViewCell.swift in Sources */,
 				89FACAD42AA5C31400510335 /* BannerViewModel.swift in Sources */,
-				89A632082A86368600652A64 /* AdTableViewCell.swift in Sources */,
+				89A632082A86368600652A64 /* AdBannerTableViewCell.swift in Sources */,
 				89A6320E2A86394500652A64 /* AmountModel.swift in Sources */,
 				89A632132A863AC700652A64 /* ImageView+Extension.swift in Sources */,
 				89A632192A87450800652A64 /* StoryboardSupports.swift in Sources */,
