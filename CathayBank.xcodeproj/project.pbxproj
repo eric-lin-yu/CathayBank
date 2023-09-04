@@ -36,6 +36,7 @@
 		89FACACE2AA56E8800510335 /* DataRepository Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACACD2AA56E8800510335 /* DataRepository Repository.swift */; };
 		89FACAD02AA56F7900510335 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACACF2AA56F7900510335 /* FavoriteViewModel.swift */; };
 		89FACAD22AA5B9DE00510335 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAD12AA5B9DE00510335 /* FavoriteCollectionViewCell.swift */; };
+		89FACAD42AA5C31400510335 /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAD32AA5C31400510335 /* BannerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		89FACACD2AA56E8800510335 /* DataRepository Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRepository Repository.swift"; sourceTree = "<group>"; };
 		89FACACF2AA56F7900510335 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		89FACAD12AA5B9DE00510335 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		89FACAD32AA5C31400510335 /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				895421E52A8FB8E700A7E1BC /* AmountViewModel.swift */,
 				89FACACF2AA56F7900510335 /* FavoriteViewModel.swift */,
+				89FACAD32AA5C31400510335 /* BannerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 			files = (
 				895421E22A8FB76B00A7E1BC /* APIManager.swift in Sources */,
 				89FACAD22AA5B9DE00510335 /* FavoriteCollectionViewCell.swift in Sources */,
+				89FACAD42AA5C31400510335 /* BannerViewModel.swift in Sources */,
 				89A632082A86368600652A64 /* AdTableViewCell.swift in Sources */,
 				89A6320E2A86394500652A64 /* AmountModel.swift in Sources */,
 				89A632132A863AC700652A64 /* ImageView+Extension.swift in Sources */,
