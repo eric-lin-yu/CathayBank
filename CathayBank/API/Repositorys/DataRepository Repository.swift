@@ -57,6 +57,18 @@ class DataRepository {
         }
     }
     
-    
-    
+    //MARK: - Banner
+    func getBannerData(completion: @escaping (Result<[BannerModel], Error>) -> Void) {
+        let adBannerURL = APIInfo.adBanner
+        
+        fetchData(for: BannerResponse.self, endpoint: adBannerURL) { result in
+            switch result {
+            case .success(let response):
+                let bannerList = response.result.bannerList
+                completion(.success(bannerList))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

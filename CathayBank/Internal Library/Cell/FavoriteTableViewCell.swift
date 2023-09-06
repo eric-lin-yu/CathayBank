@@ -182,7 +182,7 @@ class FavoriteTableViewCell: UITableViewCell {
             
             // use data show CollectionView
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            collectionView.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
+            collectionView.leftAnchor.constraint(equalTo: titleLabel.leftAnchor, constant: 24),
             collectionView.rightAnchor.constraint(equalTo: rightArrowImageView.rightAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomContentViewAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: 88),

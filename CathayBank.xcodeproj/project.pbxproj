@@ -23,7 +23,7 @@
 		89A631F72A862DF000652A64 /* CathayBankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A631F62A862DF000652A64 /* CathayBankUITestsLaunchTests.swift */; };
 		89A632042A86322F00652A64 /* UIColorSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A632032A86322F00652A64 /* UIColorSets.swift */; };
 		89A632062A86351600652A64 /* CashbalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A632052A86351600652A64 /* CashbalanceTableViewCell.swift */; };
-		89A632082A86368600652A64 /* AdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A632072A86368600652A64 /* AdTableViewCell.swift */; };
+		89A632082A86368600652A64 /* AdBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A632072A86368600652A64 /* AdBannerTableViewCell.swift */; };
 		89A6320E2A86394500652A64 /* AmountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6320A2A86394500652A64 /* AmountModel.swift */; };
 		89A6320F2A86394500652A64 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6320B2A86394500652A64 /* NotificationModel.swift */; };
 		89A632102A86394500652A64 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6320C2A86394500652A64 /* FavoriteModel.swift */; };
@@ -36,6 +36,8 @@
 		89FACACE2AA56E8800510335 /* DataRepository Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACACD2AA56E8800510335 /* DataRepository Repository.swift */; };
 		89FACAD02AA56F7900510335 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACACF2AA56F7900510335 /* FavoriteViewModel.swift */; };
 		89FACAD22AA5B9DE00510335 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAD12AA5B9DE00510335 /* FavoriteCollectionViewCell.swift */; };
+		89FACAD42AA5C31400510335 /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAD32AA5C31400510335 /* BannerViewModel.swift */; };
+		89FACB332AA8471C00510335 /* AdBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB322AA8471C00510335 /* AdBannerCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +78,7 @@
 		89A631F62A862DF000652A64 /* CathayBankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathayBankUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		89A632032A86322F00652A64 /* UIColorSets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorSets.swift; sourceTree = "<group>"; };
 		89A632052A86351600652A64 /* CashbalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbalanceTableViewCell.swift; sourceTree = "<group>"; };
-		89A632072A86368600652A64 /* AdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewCell.swift; sourceTree = "<group>"; };
+		89A632072A86368600652A64 /* AdBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerTableViewCell.swift; sourceTree = "<group>"; };
 		89A6320A2A86394500652A64 /* AmountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountModel.swift; sourceTree = "<group>"; };
 		89A6320B2A86394500652A64 /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		89A6320C2A86394500652A64 /* FavoriteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
@@ -89,6 +91,8 @@
 		89FACACD2AA56E8800510335 /* DataRepository Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRepository Repository.swift"; sourceTree = "<group>"; };
 		89FACACF2AA56F7900510335 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		89FACAD12AA5B9DE00510335 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		89FACAD32AA5C31400510335 /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
+		89FACB322AA8471C00510335 /* AdBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,32 +120,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		894065692A90F9C70093CB34 /* Repository */ = {
+		894065692A90F9C70093CB34 /* Repositorys */ = {
 			isa = PBXGroup;
 			children = (
 				89FACACD2AA56E8800510335 /* DataRepository Repository.swift */,
 				8940656B2A90F9C70093CB34 /* AmountRepository.swift */,
 			);
-			path = Repository;
+			path = Repositorys;
 			sourceTree = "<group>";
 		};
-		895421E32A8FB7AA00A7E1BC /* APIManager */ = {
+		895421E32A8FB7AA00A7E1BC /* API */ = {
 			isa = PBXGroup;
 			children = (
 				895421E12A8FB76B00A7E1BC /* APIManager.swift */,
 				89A6321A2A874C1B00652A64 /* APIInfo.swift */,
-				894065692A90F9C70093CB34 /* Repository */,
+				89A632092A86394500652A64 /* DataModels */,
+				894065692A90F9C70093CB34 /* Repositorys */,
+				895421E42A8FB83200A7E1BC /* ViewModels */,
 			);
-			path = APIManager;
+			path = API;
 			sourceTree = "<group>";
 		};
-		895421E42A8FB83200A7E1BC /* ViewModel */ = {
+		895421E42A8FB83200A7E1BC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				895421E52A8FB8E700A7E1BC /* AmountViewModel.swift */,
 				89FACACF2AA56F7900510335 /* FavoriteViewModel.swift */,
+				89FACAD32AA5C31400510335 /* BannerViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		89A631C72A862DEE00652A64 = {
@@ -169,9 +176,7 @@
 			children = (
 				89A631D32A862DEE00652A64 /* AppDelegate.swift */,
 				89A631D52A862DEE00652A64 /* SceneDelegate.swift */,
-				895421E32A8FB7AA00A7E1BC /* APIManager */,
-				89A632092A86394500652A64 /* DataModel */,
-				895421E42A8FB83200A7E1BC /* ViewModel */,
+				895421E32A8FB7AA00A7E1BC /* API */,
 				89A631D72A862DEE00652A64 /* ViewController.swift */,
 				89997C482AA1C7EA00CA27F4 /* ViewController+TabBar.swift */,
 				89FACACC2AA1E3EC00510335 /* Internal Library */,
@@ -200,7 +205,7 @@
 			path = CathayBankUITests;
 			sourceTree = "<group>";
 		};
-		89A632092A86394500652A64 /* DataModel */ = {
+		89A632092A86394500652A64 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
 				89A6320B2A86394500652A64 /* NotificationModel.swift */,
@@ -208,7 +213,7 @@
 				89A6320C2A86394500652A64 /* FavoriteModel.swift */,
 				89A6320D2A86394500652A64 /* BannerModel.swift */,
 			);
-			path = DataModel;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		89A632142A863AF100652A64 /* Extension */ = {
@@ -228,7 +233,8 @@
 				89A632052A86351600652A64 /* CashbalanceTableViewCell.swift */,
 				89997C4A2AA1CEB300CA27F4 /* FavoriteTableViewCell.swift */,
 				89FACAD12AA5B9DE00510335 /* FavoriteCollectionViewCell.swift */,
-				89A632072A86368600652A64 /* AdTableViewCell.swift */,
+				89A632072A86368600652A64 /* AdBannerTableViewCell.swift */,
+				89FACB322AA8471C00510335 /* AdBannerCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -376,7 +382,8 @@
 			files = (
 				895421E22A8FB76B00A7E1BC /* APIManager.swift in Sources */,
 				89FACAD22AA5B9DE00510335 /* FavoriteCollectionViewCell.swift in Sources */,
-				89A632082A86368600652A64 /* AdTableViewCell.swift in Sources */,
+				89FACAD42AA5C31400510335 /* BannerViewModel.swift in Sources */,
+				89A632082A86368600652A64 /* AdBannerTableViewCell.swift in Sources */,
 				89A6320E2A86394500652A64 /* AmountModel.swift in Sources */,
 				89A632132A863AC700652A64 /* ImageView+Extension.swift in Sources */,
 				89A632192A87450800652A64 /* StoryboardSupports.swift in Sources */,
@@ -395,6 +402,7 @@
 				89A632102A86394500652A64 /* FavoriteModel.swift in Sources */,
 				89A631D62A862DEE00652A64 /* SceneDelegate.swift in Sources */,
 				89A632062A86351600652A64 /* CashbalanceTableViewCell.swift in Sources */,
+				89FACB332AA8471C00510335 /* AdBannerCollectionViewCell.swift in Sources */,
 				89A6321D2A874CCB00652A64 /* String+Extension.swift in Sources */,
 				89A632112A86394500652A64 /* BannerModel.swift in Sources */,
 			);

@@ -10,7 +10,7 @@ import UIKit
 enum CathayHomeTab: Int, CaseIterable {
     case cashbalance = 0
     case favorite
-    case ad
+    case adBanner
     
     static var count: Int {
         return self.allCases.count
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: userImageView.bottomAnchor, constant: xSpacing),
             tableView.leftAnchor.constraint(equalTo: leftSafeArea),
             tableView.rightAnchor.constraint(equalTo: rightSafeArea),
-            tableView.bottomAnchor.constraint(equalTo: bottomSafeArea),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
             bottomBarView.leftAnchor.constraint(equalTo: leftSafeArea, constant: ySpacing),
             bottomBarView.rightAnchor.constraint(equalTo: rightSafeArea, constant: -ySpacing),
@@ -131,6 +131,7 @@ class ViewController: UIViewController {
         
         let useCells = [CashbalanceTableViewCell.self,
                         FavoriteTableViewCell.self,
+                        AdBannerTableViewCell.self,
                        ]
         useCells.forEach {
             tableView.register($0.self, forCellReuseIdentifier: $0.storyboardIdentifier)
@@ -151,8 +152,7 @@ class ViewController: UIViewController {
 //MARK: - TableView
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return CathayHomeTab.count
-        return 2
+        return CathayHomeTab.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -165,11 +165,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return cashbalanceCell(on: tableView, at: indexPath)
         case .favorite:
             return favoriteTableViewCell(on: tableView, at: indexPath)
-        case .ad:
-            print("")
+        case .adBanner:
+            return adBannerTableViewCell(on: tableView, at: indexPath)
         }
-
-        return UITableViewCell()
     }
 
     private func cashbalanceCell(on tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
@@ -186,6 +184,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         //TODO: reload 後改傳 false 機制
         cell.configure(isFirstLogin: true)
+        
+        return cell
+    }
+    
+    private func adBannerTableViewCell(on tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AdBannerTableViewCell.self), for: indexPath) as! AdBannerTableViewCell
+        
+        cell.configure()
         
         return cell
     }
