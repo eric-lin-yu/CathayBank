@@ -8,7 +8,26 @@
 import Foundation
 
 struct AmountViewModel {
-    func getFirstUSDTotal(completion: @escaping (String) -> Void) {
+    public static let shared = AmountViewModel()
+    
+    @MainActor
+    func configureData(isFirstLogin: Bool, completion: @escaping (String, String) -> Void) {
+        if isFirstLogin {
+            getFirstUSDTotal { usdTotal in
+                getFirstKHRTotal { khrTotal in
+                    completion(usdTotal, khrTotal)
+                }
+            }
+        } else {
+            getRefreshUSDTotal { usdTotal in
+                getRefreshKHRTotal { khrTotal in
+                    completion(usdTotal, khrTotal)
+                }
+            }
+        }
+    }
+    
+    private func getFirstUSDTotal(completion: @escaping (String) -> Void) {
         let amountRepository = AmountRepository.shared
         
         amountRepository.getFirstLoginUSDBalance { result in
@@ -22,7 +41,7 @@ struct AmountViewModel {
         }
     }
     
-    func getRefreshUSDTotal(completion: @escaping (String) -> Void) {
+    private func getRefreshUSDTotal(completion: @escaping (String) -> Void) {
         let amountRepository = AmountRepository.shared
         
         amountRepository.getRefreshUSDBalance { result in
@@ -36,7 +55,7 @@ struct AmountViewModel {
         }
     }
     
-    func getFirstKHRTotal(completion: @escaping (String) -> Void) {
+    private func getFirstKHRTotal(completion: @escaping (String) -> Void) {
         let amountRepository = AmountRepository.shared
         
         amountRepository.getFirstLoginKHRBalance { result in
@@ -50,7 +69,7 @@ struct AmountViewModel {
         }
     }
     
-    func getRefreshKHRTotal(completion: @escaping (String) -> Void) {
+    private func getRefreshKHRTotal(completion: @escaping (String) -> Void) {
         let amountRepository = AmountRepository.shared
         
         amountRepository.getRefreshKHRBalance { result in

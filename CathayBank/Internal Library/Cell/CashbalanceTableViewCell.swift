@@ -9,7 +9,6 @@ import UIKit
 
 class CashbalanceTableViewCell: UITableViewCell {
     private var isShowAmount: Bool
-    private var isFirstLogin: Bool
     private var viewModel: AmountViewModel
     
     required init?(coder: NSCoder) {
@@ -18,7 +17,6 @@ class CashbalanceTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         self.isShowAmount = true
-        self.isFirstLogin = true
         self.viewModel = AmountViewModel()
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -57,7 +55,17 @@ class CashbalanceTableViewCell: UITableViewCell {
     
     private let usdSubTitleLabel: UILabel = {
         let label = UILabel()
+        label.text = "loaging..."
         label.textColor = .dimGray
+        label.font = .systemFont(ofSize: 24)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let usdSubHideTiteLabel: UILabel = {
+        let label = UILabel()
+        label.text = "********"
+        label.isHidden = true
         label.font = .systemFont(ofSize: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -74,7 +82,17 @@ class CashbalanceTableViewCell: UITableViewCell {
     
     private let khrSubTitleLabel: UILabel = {
         let label = UILabel()
+        label.text = "loaging..."
         label.textColor = .dimGray
+        label.font = .systemFont(ofSize: 24)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let khrSubHideTiteLabel: UILabel = {
+        let label = UILabel()
+        label.text = "********"
+        label.isHidden = true
         label.font = .systemFont(ofSize: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -87,8 +105,10 @@ class CashbalanceTableViewCell: UITableViewCell {
             eyeBtn,
             usdTitleLabel,
             usdSubTitleLabel,
+            usdSubHideTiteLabel,
             khrTitleLabel,
             khrSubTitleLabel,
+            khrSubHideTiteLabel,
         ]
         viewsToAdd.forEach { self.contentView.addSubview($0) }
         eyeBtn.addTarget(self, action: #selector(eyeAmountAction), for: .touchUpInside)
@@ -107,17 +127,31 @@ class CashbalanceTableViewCell: UITableViewCell {
             usdTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
             usdTitleLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
             
+            // show
             usdSubTitleLabel.topAnchor.constraint(equalTo: usdTitleLabel.bottomAnchor),
             usdSubTitleLabel.leftAnchor.constraint(equalTo: usdTitleLabel.leftAnchor),
             usdSubTitleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -24),
             
+            // hide
+            usdSubHideTiteLabel.topAnchor.constraint(equalTo: usdTitleLabel.bottomAnchor),
+            usdSubHideTiteLabel.leftAnchor.constraint(equalTo: usdTitleLabel.leftAnchor),
+            usdSubHideTiteLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -24),
+            
+            
+            // show
             khrTitleLabel.topAnchor.constraint(equalTo: usdSubTitleLabel.bottomAnchor, constant: 8),
             khrTitleLabel.leftAnchor.constraint(equalTo: usdSubTitleLabel.leftAnchor),
             
+            // hide
             khrSubTitleLabel.topAnchor.constraint(equalTo: khrTitleLabel.bottomAnchor),
             khrSubTitleLabel.leftAnchor.constraint(equalTo: khrTitleLabel.leftAnchor),
             khrSubTitleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -24),
             khrSubTitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            
+            khrSubHideTiteLabel.topAnchor.constraint(equalTo: khrTitleLabel.bottomAnchor),
+            khrSubHideTiteLabel.leftAnchor.constraint(equalTo: khrTitleLabel.leftAnchor),
+            khrSubHideTiteLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -24),
+            khrSubHideTiteLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
         ])
     }
     
@@ -127,44 +161,26 @@ class CashbalanceTableViewCell: UITableViewCell {
             eyeBtn.setImage(image, for: .normal)
             isShowAmount = false
             
-            usdSubTitleLabel.attributedText = NSAttributedString(string: "********")
-            khrSubTitleLabel.attributedText = NSAttributedString(string: "********")
+            usdSubTitleLabel.isHidden = true
+            khrSubTitleLabel.isHidden = true
+            
+            usdSubHideTiteLabel.isHidden = false
+            khrSubHideTiteLabel.isHidden = false
         } else {
             let image = UIImage(named: "iconEye01On")
             eyeBtn.setImage(image, for: .normal)
             isShowAmount = true
             
-            if isFirstLogin {
-                configure(isFirstLogin: true)
-            } else {
-                configure(isFirstLogin: false)
-            }
+            usdSubTitleLabel.isHidden = false
+            khrSubTitleLabel.isHidden = false
+            
+            usdSubHideTiteLabel.isHidden = true
+            khrSubHideTiteLabel.isHidden = true
         }
     }
     
-    func configure(isFirstLogin: Bool) {
-        //TODO: Add loading
-        usdSubTitleLabel.text = "Loading..."
-        khrSubTitleLabel.text = "Loading..."
-        
-        self.isFirstLogin = isFirstLogin
-        
-        if isFirstLogin {
-            viewModel.getFirstUSDTotal { usdTotal in
-                self.usdSubTitleLabel.text = usdTotal
-            }
-            
-            viewModel.getFirstKHRTotal { khrTotal in
-                self.khrSubTitleLabel.text = khrTotal
-            }
-        } else {
-            viewModel.getRefreshUSDTotal { usdTotal in
-                self.usdSubTitleLabel.text = usdTotal
-            }
-            
-            viewModel.getRefreshKHRTotal { khrTotal in
-                self.khrSubTitleLabel.text = khrTotal
-            }
-        }
+    func configure(usdTotal: String, khrTotal: String) {
+        usdSubTitleLabel.text = usdTotal
+        khrSubTitleLabel.text = khrTotal
     }
 }
