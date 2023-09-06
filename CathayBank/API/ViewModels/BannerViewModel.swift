@@ -8,6 +8,7 @@
 import Foundation
 
 struct BannerViewModel {
+    @MainActor
     func getBannerData(completion: @escaping ([BannerModel]) -> Void) {
         let dataRepository = DataRepository.shared
         

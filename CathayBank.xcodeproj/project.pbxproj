@@ -37,6 +37,7 @@
 		89FACAD02AA56F7900510335 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACACF2AA56F7900510335 /* FavoriteViewModel.swift */; };
 		89FACAD22AA5B9DE00510335 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAD12AA5B9DE00510335 /* FavoriteCollectionViewCell.swift */; };
 		89FACAD42AA5C31400510335 /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAD32AA5C31400510335 /* BannerViewModel.swift */; };
+		89FACB332AA8471C00510335 /* AdBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB322AA8471C00510335 /* AdBannerCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		89FACACF2AA56F7900510335 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		89FACAD12AA5B9DE00510335 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		89FACAD32AA5C31400510335 /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
+		89FACB322AA8471C00510335 /* AdBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 				89997C4A2AA1CEB300CA27F4 /* FavoriteTableViewCell.swift */,
 				89FACAD12AA5B9DE00510335 /* FavoriteCollectionViewCell.swift */,
 				89A632072A86368600652A64 /* AdBannerTableViewCell.swift */,
+				89FACB322AA8471C00510335 /* AdBannerCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				89A632102A86394500652A64 /* FavoriteModel.swift in Sources */,
 				89A631D62A862DEE00652A64 /* SceneDelegate.swift in Sources */,
 				89A632062A86351600652A64 /* CashbalanceTableViewCell.swift in Sources */,
+				89FACB332AA8471C00510335 /* AdBannerCollectionViewCell.swift in Sources */,
 				89A6321D2A874CCB00652A64 /* String+Extension.swift in Sources */,
 				89A632112A86394500652A64 /* BannerModel.swift in Sources */,
 			);

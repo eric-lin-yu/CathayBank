@@ -8,18 +8,22 @@
 import UIKit
 
 extension UIImageView {
-    public static func loadUrlImage(urlString: String, cacheKey: String = "", completion: @escaping (UIImage?) -> Void) {
+    func loadUrlImage(urlString: String, completion: @escaping (Result<UIImage?, Error>) -> Void) {
         guard let url = URL(string: urlString) else {
-            completion(nil)
+            completion(.failure(NSError(domain: "InvalidURL", code: 0, userInfo: nil)))
             return
         }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
-            guard error == nil, let data = data, let image = UIImage(data: data) else {
-                completion(nil)
-                return
+            DispatchQueue.main.async {
+                if let error = error {
+                    completion(.failure(error))
+                } else if let data = data, let image = UIImage(data: data) {
+                    completion(.success(image))
+                } else {
+                    completion(.success(nil))
+                }
             }
-            completion(image)
         }.resume()
     }
 }
