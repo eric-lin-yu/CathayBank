@@ -10,6 +10,7 @@ import UIKit
 class AdBannerTableViewCell: UITableViewCell {
     private var viewModel: BannerViewModel
     private var adBannerArray: [BannerModel] = []
+    private var timer: Timer?
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -86,9 +87,31 @@ class AdBannerTableViewCell: UITableViewCell {
             self.adBannerArray = result
             
             DispatchQueue.main.async {
+                self.startAutoScroll()
                 self.collectionView.reloadData()
             }
         }
+    }
+    
+    // 自動輪播 ad View
+    private func startAutoScroll() {
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(scrollToNextPage), userInfo: nil, repeats: true)
+    }
+    
+    //TODO: 關閉時機
+    func stopAutoScroll() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    @objc private func scrollToNextPage() {
+        let currentPage = pageControl.currentPage
+        let nextPage = (currentPage + 1) % adBannerArray.count
+        
+        let nextIndexPath = IndexPath(item: nextPage, section: 0)
+        collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+        
+        pageControl.currentPage = nextPage
     }
 }
 
