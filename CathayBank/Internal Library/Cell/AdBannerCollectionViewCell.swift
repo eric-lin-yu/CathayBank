@@ -43,9 +43,6 @@ class AdBannerCollectionViewCell: UICollectionViewCell {
             adImageView.leftAnchor.constraint(equalTo: leftContentViewAnchor),
             adImageView.rightAnchor.constraint(equalTo: rightContentViewAnchor),
             adImageView.bottomAnchor.constraint(equalTo: bottomContentViewAnchor),
-            //TODO: 跑版 
-//            adImageView.heightAnchor.constraint(equalToConstant: 80),
-//            adImageView.widthAnchor.constraint(equalToConstant: 330),
         ])
     }
     
