@@ -21,10 +21,16 @@ enum CathayHomeTab: Int, CaseIterable {
 TODO: loading UI
 
 ### favorite (按扭區)
->上面按鈕區不確定業務需求，是要可以左右滑動 or 上下滑動？
+上面按鈕區不確定業務需求，是要可以左右滑動 or 上下滑動？
+
 或是可以擴增調整移動？
+
 因此先使用 stackView 搭配 View 來新增製作 
 
-TODO: Constraint Magical numbers
+TODO: 下拉更新後，抓取好友資料
 
 ### ad (廣告區)
+控制輪播的功能，暫時做在 ad cell 裡面處理
+
+
+TODO: Constraint Magical numbers
