@@ -118,33 +118,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		894065692A90F9C70093CB34 /* Repository */ = {
+		894065692A90F9C70093CB34 /* Repositorys */ = {
 			isa = PBXGroup;
 			children = (
 				89FACACD2AA56E8800510335 /* DataRepository Repository.swift */,
 				8940656B2A90F9C70093CB34 /* AmountRepository.swift */,
 			);
-			path = Repository;
+			path = Repositorys;
 			sourceTree = "<group>";
 		};
-		895421E32A8FB7AA00A7E1BC /* APIManager */ = {
+		895421E32A8FB7AA00A7E1BC /* API */ = {
 			isa = PBXGroup;
 			children = (
 				895421E12A8FB76B00A7E1BC /* APIManager.swift */,
 				89A6321A2A874C1B00652A64 /* APIInfo.swift */,
-				894065692A90F9C70093CB34 /* Repository */,
+				89A632092A86394500652A64 /* DataModels */,
+				894065692A90F9C70093CB34 /* Repositorys */,
+				895421E42A8FB83200A7E1BC /* ViewModels */,
 			);
-			path = APIManager;
+			path = API;
 			sourceTree = "<group>";
 		};
-		895421E42A8FB83200A7E1BC /* ViewModel */ = {
+		895421E42A8FB83200A7E1BC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				895421E52A8FB8E700A7E1BC /* AmountViewModel.swift */,
 				89FACACF2AA56F7900510335 /* FavoriteViewModel.swift */,
 				89FACAD32AA5C31400510335 /* BannerViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		89A631C72A862DEE00652A64 = {
@@ -172,9 +174,7 @@
 			children = (
 				89A631D32A862DEE00652A64 /* AppDelegate.swift */,
 				89A631D52A862DEE00652A64 /* SceneDelegate.swift */,
-				895421E32A8FB7AA00A7E1BC /* APIManager */,
-				89A632092A86394500652A64 /* DataModel */,
-				895421E42A8FB83200A7E1BC /* ViewModel */,
+				895421E32A8FB7AA00A7E1BC /* API */,
 				89A631D72A862DEE00652A64 /* ViewController.swift */,
 				89997C482AA1C7EA00CA27F4 /* ViewController+TabBar.swift */,
 				89FACACC2AA1E3EC00510335 /* Internal Library */,
@@ -203,7 +203,7 @@
 			path = CathayBankUITests;
 			sourceTree = "<group>";
 		};
-		89A632092A86394500652A64 /* DataModel */ = {
+		89A632092A86394500652A64 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
 				89A6320B2A86394500652A64 /* NotificationModel.swift */,
@@ -211,7 +211,7 @@
 				89A6320C2A86394500652A64 /* FavoriteModel.swift */,
 				89A6320D2A86394500652A64 /* BannerModel.swift */,
 			);
-			path = DataModel;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		89A632142A863AF100652A64 /* Extension */ = {

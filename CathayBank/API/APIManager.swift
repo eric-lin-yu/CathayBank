@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum APIError: Error {
+    case invalidURL
+    case networkError
+}
+
 enum HttpMethod: String {
     case get = "GET"
     case post = "POST"
@@ -19,25 +24,25 @@ enum APIResult {
 
 class APIManager {
     static let shared = APIManager()
-
+    
     private init() {}
-
-    func request(endpoint: String, method: HttpMethod, completion: @escaping (APIResult) -> Void) {
+    
+    func request(endpoint: String, method: HttpMethod, completion: @escaping (Result<Data, Error>) -> Void) {
         guard let url = URL(string: endpoint) else {
-            completion(.failure(error: NSError(domain: "APIManager", code: 0, userInfo: nil)))
+            completion(.failure(APIError.invalidURL))
             return
         }
-
+        
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
-
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
-                completion(.success(data: data))
+                completion(.success(data))
             } else if let error = error {
-                completion(.failure(error: error))
+                completion(.failure(error))
             } else {
-                completion(.failure(error: NSError(domain: "APIManager", code: 0, userInfo: nil)))
+                completion(.failure(APIError.networkError))
             }
         }.resume()
     }
