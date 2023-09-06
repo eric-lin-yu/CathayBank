@@ -18,6 +18,7 @@ enum CathayHomeTab: Int, CaseIterable {
 }
 
 class ViewController: UIViewController {
+    private var isFirstLogin: Bool
     // constraint Spacing
     private let xSpacing: CGFloat = 5
     private let ySpacing: CGFloat = 24
@@ -27,10 +28,11 @@ class ViewController: UIViewController {
     private let bottomViewHeight: CGFloat = 50
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     init() {
+        self.isFirstLogin = true
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -173,7 +175,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     private func cashbalanceCell(on tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CashbalanceTableViewCell.self), for: indexPath) as! CashbalanceTableViewCell
         
-        AmountViewModel.shared.configureData(isFirstLogin: true) { usdTotal, khrTotal in
+        AmountViewModel.shared.configureData(isFirstLogin: isFirstLogin) { usdTotal, khrTotal in
             cell.configure(usdTotal: usdTotal, khrTotal: khrTotal)
         }
         
