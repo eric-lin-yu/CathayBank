@@ -62,7 +62,7 @@ class AdBannerTableViewCell: UITableViewCell {
         let bottomContentViewAnchor = contentView.bottomAnchor
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topContentViewAnchor, constant: 24),
+            collectionView.topAnchor.constraint(equalTo: topContentViewAnchor),
             collectionView.leftAnchor.constraint(equalTo: leftContentViewAnchor, constant: 24),
             collectionView.rightAnchor.constraint(equalTo: rightContentViewAnchor, constant: -24),
             collectionView.heightAnchor.constraint(equalToConstant: 100),
