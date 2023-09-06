@@ -28,8 +28,6 @@ class AdBannerTableViewCell: UITableViewCell {
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
@@ -66,12 +64,13 @@ class AdBannerTableViewCell: UITableViewCell {
             collectionView.topAnchor.constraint(equalTo: topContentViewAnchor, constant: 24),
             collectionView.leftAnchor.constraint(equalTo: leftContentViewAnchor, constant: 24),
             collectionView.rightAnchor.constraint(equalTo: rightContentViewAnchor, constant: -24),
-            collectionView.heightAnchor.constraint(equalToConstant: 87.9),
+            collectionView.heightAnchor.constraint(equalToConstant: 100),
             
             pageControl.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 4),
             pageControl.leftAnchor.constraint(equalTo: collectionView.leftAnchor),
             pageControl.rightAnchor.constraint(equalTo: collectionView.rightAnchor),
             pageControl.bottomAnchor.constraint(equalTo: bottomContentViewAnchor, constant: -4),
+            pageControl.heightAnchor.constraint(equalToConstant: 20),
         ])
     }
     
@@ -94,7 +93,7 @@ class AdBannerTableViewCell: UITableViewCell {
 }
 
 //MARK: - CollectionView
-extension AdBannerTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AdBannerTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return adBannerArray.count
     }
@@ -110,6 +109,7 @@ extension AdBannerTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         return cell
     }
     
+    // UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
