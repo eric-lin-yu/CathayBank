@@ -238,7 +238,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AdBannerTableViewCell.self), for: indexPath) as! AdBannerTableViewCell
         
         BannerViewModel.shared.configureData { bannerModels in
-            cell.configure(bannerArray: bannerModels)
+            cell.configure(isFirstLogin: self.isFirstLogin, bannerArray: bannerModels)
         }
         return cell
     }

@@ -79,10 +79,12 @@ class AdBannerTableViewCell: UITableViewCell {
         collectionView.register(AdBannerCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: AdBannerCollectionViewCell.self))
     }
     
-    func configure(bannerArray: [BannerModel]) {
+    func configure(isFirstLogin: Bool, bannerArray: [BannerModel]) {
         self.adBannerArray = bannerArray
         collectionView.reloadData()
-        startAutoScroll()
+        if isFirstLogin {
+            startAutoScroll()
+        }
     }
     
     // 自動輪播 ad View
