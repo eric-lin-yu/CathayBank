@@ -14,6 +14,9 @@ extension UIColor {
 
     /// 暗灰色
     static let dimGray: UIColor = { return UIColor.init(red: 68, green: 68, blue: 68, alpha: 1.0) }()
+    
+    /// 鋼灰色
+    static let steelGray: UIColor = { return UIColor.init(red: 115, green: 116, blue: 126, alpha: 1.0) }()
 
 }
 
