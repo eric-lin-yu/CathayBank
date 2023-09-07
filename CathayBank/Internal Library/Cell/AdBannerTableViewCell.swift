@@ -82,23 +82,22 @@ class AdBannerTableViewCell: UITableViewCell {
         collectionView.register(AdBannerCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: AdBannerCollectionViewCell.self))
     }
     
-    func configure() {
-        viewModel.getBannerData { result in
-            self.adBannerArray = result
-            
-            DispatchQueue.main.async {
-                self.startAutoScroll()
-                self.collectionView.reloadData()
-            }
+    func configure(bannerArray: [BannerModel]) {
+        self.adBannerArray = bannerArray
+        collectionView.reloadData()
+        
+        if adBannerArray.isEmpty {
+            startAutoScroll()
+        } else {
+            stopAutoScroll()
         }
     }
     
     // 自動輪播 ad View
-    private func startAutoScroll() {
+    func startAutoScroll() {
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(scrollToNextPage), userInfo: nil, repeats: true)
     }
     
-    //TODO: 關閉時機
     func stopAutoScroll() {
         timer?.invalidate()
         timer = nil

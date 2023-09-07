@@ -8,8 +8,18 @@
 import Foundation
 
 struct BannerViewModel {
+    public static let shared = BannerViewModel()
+    
     @MainActor
-    func getBannerData(completion: @escaping ([BannerModel]) -> Void) {
+    func configureData(completion: @escaping ([BannerModel]) -> Void) {
+        getBannerData { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }
+    }
+
+    private func getBannerData(completion: @escaping ([BannerModel]) -> Void) {
         let dataRepository = DataRepository.shared
         
         dataRepository.getBannerData { result in
