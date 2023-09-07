@@ -7,8 +7,6 @@
 
 - UI 主要都以 code layout 來製作，不使用 storoboard、xib。
 
-- API 相關都放在這個資料夾
-
 >TODO:\
 目前 Constraint 都是 Magical numbers
 
@@ -33,7 +31,7 @@ private func createView(image: String, title: String, tapAction: Selector) -> UI
 ```
 
 - Notification (右上鈴鐺 button)\
--> 下拉更新後，會去抓 viewMode 並 addTarget 才能點選，同時替換為 紅點 Icon
+-> 下拉更新後，會去抓 viewModel 並 addTarget 才能點選，同時替換為 紅點 Icon
 
 ### cashbalance Cell(餘額顯示區)
 - 目前是否顯示金額 & 隱藏餘額顯示的 label 是用兩個 label 來達成效果
