@@ -8,7 +8,6 @@
 import UIKit
 
 class AdBannerTableViewCell: UITableViewCell {
-    private var viewModel: BannerViewModel
     private var adBannerArray: [BannerModel] = []
     private var timer: Timer?
     
@@ -17,9 +16,7 @@ class AdBannerTableViewCell: UITableViewCell {
     }
     
     // tableView
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        self.viewModel = BannerViewModel()
-        
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
         setupConstraint()
