@@ -27,6 +27,37 @@ class DataRepository {
         }
     }
     
+    //MARK: - Notification
+    /// 空的 Notification
+    func getEmptyNotificationData(completion: @escaping (Result<[NotificationModel], Error>) -> Void) {
+        let notificationURL = APIInfo.emptyNotificationList
+        
+        fetchData(for: NotificationResponse.self, endpoint: notificationURL) { result in
+            switch result {
+            case .success(let response):
+                let notificationArray = response.result.NotificationList
+                completion(.success(notificationArray))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    /// 重整抓新的 NotificationData
+    func getRefreshNotificationData(completion: @escaping (Result<[NotificationModel], Error>) -> Void) {
+        let notificationURL = APIInfo.notificationList
+        
+        fetchData(for: NotificationResponse.self, endpoint: notificationURL) { result in
+            switch result {
+            case .success(let response):
+                let notificationArray = response.result.NotificationList
+                completion(.success(notificationArray))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
     //MARK: - Favorite
     /// 第一次登入抓空的 FavoriteData
     func getFirstLoginEmptyFavoriteData(completion: @escaping (Result<[FavoriteModel], Error>) -> Void) {
