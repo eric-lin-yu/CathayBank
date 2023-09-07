@@ -165,10 +165,32 @@ class ViewController: UIViewController {
     
     @objc private func refreshData(_ sender: Any) {
         isFirstLogin = false
+        
+        if !isFirstLogin {
+            let image = UIImage(named: "iconBell02Active")
+            notificationBtn.setImage(image, for: .normal)
+            notificationBtn.addTarget(self, action: #selector(notificationAction), for: .touchUpInside)
+        }
+        
         tableView.reloadData()
         refreshControl.endRefreshing()
     }
-
+    
+    @objc private func notificationAction() {
+        NotificationViewModel.shared.configureData(isFirstLogin: isFirstLogin) { [weak self] result in
+            guard let self = self else { return }
+            
+            let vc = NotificationViewController(notificationArray: result)
+            
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
+    @objc private func back() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 //MARK: - TableView

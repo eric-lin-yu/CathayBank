@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		893BB93B2AA975E200A9A3B8 /* CathayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893BB93A2AA975E200A9A3B8 /* CathayNavigationController.swift */; };
 		893BB93D2AA97B1E00A9A3B8 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893BB93C2AA97B1E00A9A3B8 /* NotificationViewModel.swift */; };
+		893BB93F2AA97CA200A9A3B8 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893BB93E2AA97CA200A9A3B8 /* NotificationViewController.swift */; };
+		893BB9412AA97E6A00A9A3B8 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893BB9402AA97E6A00A9A3B8 /* NotificationTableViewCell.swift */; };
 		8940656F2A90F9C70093CB34 /* AmountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940656B2A90F9C70093CB34 /* AmountRepository.swift */; };
 		895421E22A8FB76B00A7E1BC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895421E12A8FB76B00A7E1BC /* APIManager.swift */; };
 		895421E62A8FB8E700A7E1BC /* AmountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895421E52A8FB8E700A7E1BC /* AmountViewModel.swift */; };
@@ -62,6 +64,8 @@
 /* Begin PBXFileReference section */
 		893BB93A2AA975E200A9A3B8 /* CathayNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CathayNavigationController.swift; sourceTree = "<group>"; };
 		893BB93C2AA97B1E00A9A3B8 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		893BB93E2AA97CA200A9A3B8 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		893BB9402AA97E6A00A9A3B8 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		8940656B2A90F9C70093CB34 /* AmountRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountRepository.swift; sourceTree = "<group>"; };
 		895421E12A8FB76B00A7E1BC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		895421E52A8FB8E700A7E1BC /* AmountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountViewModel.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				895421E32A8FB7AA00A7E1BC /* API */,
 				89A631D72A862DEE00652A64 /* ViewController.swift */,
 				89997C482AA1C7EA00CA27F4 /* ViewController+TabBar.swift */,
+				893BB93E2AA97CA200A9A3B8 /* NotificationViewController.swift */,
 				89FACACC2AA1E3EC00510335 /* Internal Library */,
 				89A631DC2A862DF000652A64 /* Assets.xcassets */,
 				89A631E12A862DF000652A64 /* Info.plist */,
@@ -236,6 +241,7 @@
 		89A632172A87372B00652A64 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				893BB9402AA97E6A00A9A3B8 /* NotificationTableViewCell.swift */,
 				89A632052A86351600652A64 /* CashbalanceTableViewCell.swift */,
 				89997C4A2AA1CEB300CA27F4 /* FavoriteTableViewCell.swift */,
 				89FACAD12AA5B9DE00510335 /* FavoriteCollectionViewCell.swift */,
@@ -396,6 +402,7 @@
 				89A632192A87450800652A64 /* StoryboardSupports.swift in Sources */,
 				89A6320F2A86394500652A64 /* NotificationModel.swift in Sources */,
 				89A632042A86322F00652A64 /* UIColorSets.swift in Sources */,
+				893BB93F2AA97CA200A9A3B8 /* NotificationViewController.swift in Sources */,
 				89A6321B2A874C1B00652A64 /* APIInfo.swift in Sources */,
 				89997C492AA1C7EA00CA27F4 /* ViewController+TabBar.swift in Sources */,
 				89FACAD02AA56F7900510335 /* FavoriteViewModel.swift in Sources */,
@@ -407,6 +414,7 @@
 				89A631D42A862DEE00652A64 /* AppDelegate.swift in Sources */,
 				893BB93B2AA975E200A9A3B8 /* CathayNavigationController.swift in Sources */,
 				89FACACE2AA56E8800510335 /* DataRepository Repository.swift in Sources */,
+				893BB9412AA97E6A00A9A3B8 /* NotificationTableViewCell.swift in Sources */,
 				89A632102A86394500652A64 /* FavoriteModel.swift in Sources */,
 				89A631D62A862DEE00652A64 /* SceneDelegate.swift in Sources */,
 				89A632062A86351600652A64 /* CashbalanceTableViewCell.swift in Sources */,
