@@ -183,6 +183,7 @@ class ViewController: UIViewController {
             let vc = NotificationViewController(notificationArray: result)
             
             DispatchQueue.main.async {
+                self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(self.back))
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }

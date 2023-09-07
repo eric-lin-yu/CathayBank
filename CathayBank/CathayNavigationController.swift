@@ -13,7 +13,10 @@ class CathayNavigationController: UINavigationController {
         appearance.configureWithTransparentBackground()
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         appearance.backgroundColor = .white
-        appearance.backButtonAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: -1000, vertical: 0)
+        
+        let backImage = UIImage(named: "iconArrowWTailBack")
+        appearance.setBackIndicatorImage(backImage, transitionMaskImage: backImage)
+        
         bar.tintColor = .black
         bar.standardAppearance = appearance
         bar.scrollEdgeAppearance = appearance
