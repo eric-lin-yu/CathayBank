@@ -18,7 +18,6 @@ class FavoriteTableViewCell: UITableViewCell {
     }
     
     private var views: [UIView] = []
-    private var viewModel: FavoriteViewModel
     private var favoriteArray: [FavoriteModel] = []
     // constraint Spacing
     private let stackSize: CGFloat = 96
@@ -30,8 +29,6 @@ class FavoriteTableViewCell: UITableViewCell {
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        self.viewModel = FavoriteViewModel()
-        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
         setUpCollcetionView()
