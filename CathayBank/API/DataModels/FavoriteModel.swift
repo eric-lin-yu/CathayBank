@@ -10,16 +10,16 @@ import Foundation
 struct FavoriteResponse: Codable {
     let msgCode: String
     let msgContent: String
-    let result: ResultData
+    let result: FavoriteResultData
     
-    init(msgCode: String, msgContent: String, result: ResultData) {
+    init(msgCode: String, msgContent: String, result: FavoriteResultData) {
         self.msgCode = msgCode
         self.msgContent = msgContent
         self.result = result
     }
 }
 
-struct ResultData: Codable {
+struct FavoriteResultData: Codable {
     let favoriteList: [FavoriteModel]
 }
 
