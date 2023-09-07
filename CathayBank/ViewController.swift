@@ -18,6 +18,7 @@ enum CathayHomeTab: Int, CaseIterable {
 }
 
 class ViewController: UIViewController {
+    private let refreshControl = UIRefreshControl()
     private var isFirstLogin: Bool = true
     // constraint Spacing
     private let xSpacing: CGFloat = 5
@@ -146,6 +147,15 @@ class ViewController: UIViewController {
         setUpTableView()
         setupTabBarView(bottomBarView: bottomBarView, bottomBarStackView: bottomBarStackView)
         setupConstraint()
+        
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        isFirstLogin = false
+        tableView.reloadData()
+        refreshControl.endRefreshing()
     }
 
 }

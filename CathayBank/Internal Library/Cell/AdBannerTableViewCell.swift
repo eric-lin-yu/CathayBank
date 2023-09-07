@@ -85,12 +85,7 @@ class AdBannerTableViewCell: UITableViewCell {
     func configure(bannerArray: [BannerModel]) {
         self.adBannerArray = bannerArray
         collectionView.reloadData()
-        
-        if adBannerArray.isEmpty {
-            startAutoScroll()
-        } else {
-            stopAutoScroll()
-        }
+        startAutoScroll()
     }
     
     // 自動輪播 ad View
@@ -98,6 +93,7 @@ class AdBannerTableViewCell: UITableViewCell {
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(scrollToNextPage), userInfo: nil, repeats: true)
     }
     
+    //TODO: 停止機制
     func stopAutoScroll() {
         timer?.invalidate()
         timer = nil

@@ -65,7 +65,7 @@ class FavoriteTableViewCell: UITableViewCell {
         let label = UILabel()
         label.text = "My Favorite"
         label.textColor = .lightGray
-        label.font = .systemFont(ofSize: 18)
+        label.font = .boldSystemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -125,6 +125,7 @@ class FavoriteTableViewCell: UITableViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
@@ -168,7 +169,7 @@ class FavoriteTableViewCell: UITableViewCell {
             bStackView.rightAnchor.constraint(equalTo: aStackView.rightAnchor),
             bStackView.heightAnchor.constraint(equalToConstant: stackSize),
             
-            titleLabel.topAnchor.constraint(equalTo: bStackView.bottomAnchor, constant: 8),
+            titleLabel.topAnchor.constraint(equalTo: bStackView.bottomAnchor, constant: 16),
             titleLabel.leftAnchor.constraint(equalTo: leftContentViewAnchor, constant: 24),
             titleLabel.rightAnchor.constraint(equalTo: moreLabel.leftAnchor),
             
@@ -182,16 +183,16 @@ class FavoriteTableViewCell: UITableViewCell {
             
             // use data show CollectionView
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            collectionView.leftAnchor.constraint(equalTo: titleLabel.leftAnchor, constant: 24),
+            collectionView.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: rightArrowImageView.rightAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomContentViewAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomContentViewAnchor, constant: -16),
             collectionView.heightAnchor.constraint(equalToConstant: 88),
             
             // no use dat show DefaultsView
             defaultsView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
             defaultsView.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
             defaultsView.rightAnchor.constraint(equalTo: rightArrowImageView.rightAnchor),
-            defaultsView.bottomAnchor.constraint(equalTo: bottomContentViewAnchor),
+            defaultsView.bottomAnchor.constraint(equalTo: bottomContentViewAnchor, constant: -16),
             
             defaultsImageView.topAnchor.constraint(equalTo: defaultsView.topAnchor, constant: 2),
             defaultsImageView.leftAnchor.constraint(equalTo: defaultsView.leftAnchor, constant: 2),
@@ -257,20 +258,21 @@ class FavoriteTableViewCell: UITableViewCell {
     }
     
     func configure(isFirstLogin: Bool, favoriteArray: [FavoriteModel]) {
-        // add button View
-        updateStackView(option: .transfer, stackView: aStackView)
-        updateStackView(option: .payment, stackView: aStackView)
-        updateStackView(option: .utility, stackView: aStackView)
-        
-        updateStackView(option: .qrPayScan, stackView: bStackView)
-        updateStackView(option: .myQRCode, stackView: bStackView)
-        updateStackView(option: .topup, stackView: bStackView)
-        
         if isFirstLogin {
+            // add button View
+            updateStackView(option: .transfer, stackView: aStackView)
+            updateStackView(option: .payment, stackView: aStackView)
+            updateStackView(option: .utility, stackView: aStackView)
+            
+            updateStackView(option: .qrPayScan, stackView: bStackView)
+            updateStackView(option: .myQRCode, stackView: bStackView)
+            updateStackView(option: .topup, stackView: bStackView)
+            
             collectionView.isHidden = isFirstLogin
             defaultsView.isHidden = !isFirstLogin
         } else {
-            collectionView.isHidden = !isFirstLogin
+            self.favoriteArray = favoriteArray
+            collectionView.isHidden = false
             defaultsView.isHidden = true
         }
         collectionView.reloadData()
@@ -278,7 +280,7 @@ class FavoriteTableViewCell: UITableViewCell {
 }
 
 //MARK:  - Collection
-extension FavoriteTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension FavoriteTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return favoriteArray.count
     }
@@ -289,5 +291,15 @@ extension FavoriteTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         cell.configure(title: favoriteArray[indexPath.row].transType)
         
         return cell
+    }
+    
+    // UICollectionViewDelegateFlowLayout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 24
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width/5,
+                      height: collectionView.bounds.height)
     }
 }
