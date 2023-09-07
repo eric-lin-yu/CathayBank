@@ -1,5 +1,7 @@
 # 設計架構
 >UI 主要都以 code layout 來製作。減少使用 storoboard、xib 來製作 UI ，避免未來難以維護的情況。
+
+以 MVVM 的架構來撰寫設計。
 ## 首頁
 >以 tableView 為基底設計框架，以 cell 來製作各區塊的 UI (餘額顯示、button 區、ad 廣告...)
 >使用以下 enum 來抓取對應的 cell
@@ -27,10 +29,10 @@ TODO: loading UI
 
 因此先使用 stackView 搭配 View 來新增製作 
 
-TODO: 下拉更新後，抓取好友資料
+
+最愛的 icon 在 ziplin 上只有四張，且與 API 打過去得到的 nickname
+
+也無相關，因此先以這四張來做使用
 
 ### ad (廣告區)
-控制輪播的功能，暫時做在 ad cell 裡面處理
-
-
 TODO: Constraint Magical numbers
