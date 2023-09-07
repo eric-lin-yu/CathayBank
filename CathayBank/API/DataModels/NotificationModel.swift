@@ -19,7 +19,7 @@ struct NotificationResponse: Codable {
 }
 
 struct NotificationResultData: Codable {
-    let NotificationList: [NotificationModel]
+    let messages: [NotificationModel]
 }
 
 struct NotificationModel: Codable {

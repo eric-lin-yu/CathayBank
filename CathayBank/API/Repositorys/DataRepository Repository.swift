@@ -35,7 +35,7 @@ class DataRepository {
         fetchData(for: NotificationResponse.self, endpoint: notificationURL) { result in
             switch result {
             case .success(let response):
-                let notificationArray = response.result.NotificationList
+                let notificationArray = response.result.messages
                 completion(.success(notificationArray))
             case .failure(let error):
                 completion(.failure(error))
@@ -50,7 +50,7 @@ class DataRepository {
         fetchData(for: NotificationResponse.self, endpoint: notificationURL) { result in
             switch result {
             case .success(let response):
-                let notificationArray = response.result.NotificationList
+                let notificationArray = response.result.messages
                 completion(.success(notificationArray))
             case .failure(let error):
                 completion(.failure(error))
