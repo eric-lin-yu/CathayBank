@@ -9,7 +9,6 @@ import UIKit
 
 class CashbalanceTableViewCell: UITableViewCell {
     private var isShowAmount: Bool
-    private var viewModel: AmountViewModel
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -17,7 +16,6 @@ class CashbalanceTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         self.isShowAmount = true
-        self.viewModel = AmountViewModel()
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .clear
