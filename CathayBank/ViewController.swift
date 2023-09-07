@@ -184,9 +184,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     private func favoriteTableViewCell(on tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FavoriteTableViewCell.self), for: indexPath) as! FavoriteTableViewCell
         
-        //TODO: reload 後改傳 false 機制
-        cell.configure(isFirstLogin: true)
-        
+        FavoriteViewModel.shared.configureData(isFirstLogin: isFirstLogin) { favoriteModels in
+            cell.configure(isFirstLogin: self.isFirstLogin, favoriteArray: favoriteModels)
+        }
         return cell
     }
     

@@ -256,7 +256,7 @@ class FavoriteTableViewCell: UITableViewCell {
         return containerView
     }
     
-    func configure(isFirstLogin: Bool) {
+    func configure(isFirstLogin: Bool, favoriteArray: [FavoriteModel]) {
         // add button View
         updateStackView(option: .transfer, stackView: aStackView)
         updateStackView(option: .payment, stackView: aStackView)
@@ -266,31 +266,13 @@ class FavoriteTableViewCell: UITableViewCell {
         updateStackView(option: .myQRCode, stackView: bStackView)
         updateStackView(option: .topup, stackView: bStackView)
         
-        
-        
         if isFirstLogin {
             collectionView.isHidden = isFirstLogin
             defaultsView.isHidden = !isFirstLogin
-            
-            viewModel.getFirstLoginEmptyFavoriteData { _ in
-                // 空的，目前不用顯示 UI
-            }
         } else {
             collectionView.isHidden = !isFirstLogin
             defaultsView.isHidden = true
-            
-            // TODO: 待下拉更新後，再來調整
-            DispatchQueue.global().async {
-                self.viewModel.getRefreshFavoriteData { favoriteModel in
-                    DispatchQueue.main.async {
-                        self.favoriteArray = favoriteModel
-                        self.collectionView.reloadData()
-                    }
-                }
-            }
         }
-     
-        
     }
 }
 
