@@ -11,7 +11,7 @@ class CathayNavigationController: UINavigationController {
         let bar = super.navigationBar
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
-        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         appearance.backgroundColor = .white
         appearance.backButtonAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: -1000, vertical: 0)
         bar.tintColor = .black
