@@ -6,8 +6,23 @@
 //
 
 import Foundation
+struct NotificationResponse: Codable {
+    let msgCode: String
+    let msgContent: String
+    let result: NotificationResultData
+    
+    init(msgCode: String, msgContent: String, result: NotificationResultData) {
+        self.msgCode = msgCode
+        self.msgContent = msgContent
+        self.result = result
+    }
+}
 
-struct NotificationModel {
+struct NotificationResultData: Codable {
+    let NotificationList: [NotificationModel]
+}
+
+struct NotificationModel: Codable {
     var status: Bool
     var updateDateTime: String
     var title: String
