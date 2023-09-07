@@ -29,7 +29,7 @@ class CashbalanceTableViewCell: UITableViewCell {
         let label = UILabel()
         label.text = "My Account Balance"
         label.textColor = .lightGray
-        label.font = .systemFont(ofSize: 18)
+        label.font = .boldSystemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
