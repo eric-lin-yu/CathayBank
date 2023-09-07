@@ -273,6 +273,7 @@ class FavoriteTableViewCell: UITableViewCell {
             collectionView.isHidden = !isFirstLogin
             defaultsView.isHidden = true
         }
+        collectionView.reloadData()
     }
 }
 
