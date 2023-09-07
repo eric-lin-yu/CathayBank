@@ -18,7 +18,7 @@ enum CathayHomeTab: Int, CaseIterable {
 }
 
 class ViewController: UIViewController {
-    private var isFirstLogin: Bool
+    private var isFirstLogin: Bool = true
     // constraint Spacing
     private let xSpacing: CGFloat = 5
     private let ySpacing: CGFloat = 24
@@ -28,11 +28,10 @@ class ViewController: UIViewController {
     private let bottomViewHeight: CGFloat = 50
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     init() {
-        self.isFirstLogin = true
         super.init(nibName: nil, bundle: nil)
     }
     
